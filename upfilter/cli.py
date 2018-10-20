@@ -51,7 +51,6 @@ def main():
     """Entry point to program. Parses command line arguments and outputs filtered fasta sequences."""
     parser = create_parser()
     parser_args = parser.parse_args()
-    print(parser_args)
 
     with parser_args.infile as infile, parser_args.outfile as outfile:
         fasta_list = FastaParser(infile)
