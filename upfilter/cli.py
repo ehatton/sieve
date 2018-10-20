@@ -1,16 +1,24 @@
 import argparse
 import sys
-from .fasta_parser import FastaParser
+from upfilter.fasta_parser import FastaParser
 
 
 def create_parser():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "infile", nargs="?", type=argparse.FileType("r"), default=sys.stdin
+        "infile",
+        nargs="?",
+        type=argparse.FileType("r"),
+        default=sys.stdin,
+        help="file to read, must contain UniProt fasta sequences",
     )
     parser.add_argument(
-        "outfile", nargs="?", type=argparse.FileType("w"), default=sys.stdout
+        "outfile",
+        nargs="?",
+        type=argparse.FileType("w"),
+        default=sys.stdout,
+        help="file to write, filtered UniProt fasta sequences",
     )
     parser.add_argument(
         "-r",
@@ -25,8 +33,12 @@ def create_parser():
         "--max", help="filter fasta sequences by maximum sequence length", type=int
     )
     parser.add_argument(
-        "-t", "--taxid", help="filter fasta sequences with given NCBI taxonomy id"
+        "-t",
+        "--taxid",
+        nargs="*",
+        help="filter fasta sequences with given NCBI taxonomy id(s)",
     )
+    parser.add_argument("-e", "--evidence", choices=[1, 2, 3, 4, 5], nargs="*", type=int, help="filter fasta sequences by evidence level(s)")
 
     return parser
 
@@ -38,11 +50,13 @@ def filter_all(parser_args, fasta_list):
         fasta_list = filter(lambda x: not x.reviewed, fasta_list)
 
     if parser_args.taxid is not None:
-        fasta_list = filter(lambda x: x.taxid == parser_args.taxid, fasta_list)
+        fasta_list = filter(lambda x: x.taxid in parser_args.taxid, fasta_list)
     if parser_args.min is not None:
         fasta_list = filter(lambda x: len(x) >= parser_args.min, fasta_list)
     if parser_args.max is not None:
         fasta_list = filter(lambda x: len(x) <= parser_args.max, fasta_list)
+    if parser_args.evidence is not None:
+        fasta_list = filter(lambda x: x.evidence in parser_args.evidence, fasta_list)
 
     return fasta_list
 
