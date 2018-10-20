@@ -97,7 +97,7 @@ class TestFastaParser(unittest.TestCase):
         self.assertEqual(fields[9], False)
 
     def test_parser(self):
-        with open("tests/SHLD1.fa", "r") as infile:
+        with open("tests/samples/SHLD1.fasta", "r") as infile:
             fasta = list(i for i in FastaParser(infile))
         # Check that we get a list of 3 items
         self.assertEqual(len(fasta), 3)
