@@ -4,18 +4,19 @@ from collections import namedtuple
 from upfilter import FastaParser
 
 
-class TestFilter(unittest.TestCase):
+# Define a mock parser argument object for use in these tests.
+# The infile and outfile attributes are not needed here, hence omitted.
+mock_parser_args = namedtuple("MockParserArgs", ["reviewed", "min", "max", "taxid"])
+
+
+class TestCLI(unittest.TestCase):
     """Tests for the command-line interface module."""
 
     def setUp(self):
-        with open("tests/SHLD1.fa", "r") as infile:
+        with open("tests/samples/SHLD1.fasta", "r") as infile:
             fasta_list = list(FastaParser(infile))
         self.fasta_list = fasta_list
-
-        self.mock_parser_args = namedtuple(
-            "MockParserArgs", ["infile", "outfile", "reviewed", "min", "max", "taxid"]
-        )
-
+        
     def test_create_parser(self):
         parser = cli.create_parser()
         options = parser._actions
@@ -30,5 +31,48 @@ class TestFilter(unittest.TestCase):
         self.assertEqual(options[5].dest, "max")
         self.assertEqual(options[6].dest, "taxid")
 
-    # def test_filter_all():
-    #     parser_args =
+    def test_filter_reviewed_yes(self):
+        args = mock_parser_args(reviewed="yes", min=None, max=None, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 3)
+
+    def test_filter_reviewed_no(self):
+        args = mock_parser_args(reviewed="no", min=None, max=None, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 0)
+
+    def test_filter_min_200(self):
+        args = mock_parser_args(reviewed=None, min=200, max=None, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 3)
+
+    def test_filter_min_300(self):
+        args = mock_parser_args(reviewed=None, min=300, max=None, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 0)
+
+    def test_filter_max_200(self):
+        args = mock_parser_args(reviewed=None, min=None, max=200, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 0)
+
+    def test_filter_max_300(self):
+        args = mock_parser_args(reviewed=None, min=None, max=300, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 3)
+
+    def test_filter_max_min(self):
+        args = mock_parser_args(reviewed=None, min=205, max=205, taxid=None)
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 1)
+        self.assertEqual(filtered_fasta[0].accession, "Q8IYI0")
+
+    def test_filter_taxid(self):
+        args = mock_parser_args(reviewed=None, min=None, max=None, taxid="10090")
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(filtered_fasta[0].accession, "Q9D112")
+
+    def test_filter_max_taxid(self):
+        args = mock_parser_args(reviewed=None, min=None, max=205, taxid="10090")
+        filtered_fasta = list(cli.filter_all(args, self.fasta_list))
+        self.assertEqual(len(filtered_fasta), 0)
