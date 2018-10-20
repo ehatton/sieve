@@ -4,6 +4,7 @@ from io import StringIO
 
 
 class TestFasta(unittest.TestCase):
+    """Tests for the upfilter Fasta class."""
     def setUp(self):
         header = ">sp|P60761|NEUG_MOUSE Neurogranin OS=Mus musculus OX=10090 GN=Nrgn PE=1 SV=1"
         seq = [
@@ -37,6 +38,7 @@ PGGAGGARGGAGGGPSGD\n"""
 
 
 class TestFastaFragment(unittest.TestCase):
+    """Additional tests for the upfilter Fasta class, to check that it works with sequences annotated as fragment."""
     def setUp(self):
         header = ">tr|E9PW65|E9PW65_MOUSE Bone morphogenetic protein receptor type-1A (Fragment) OS=Mus musculus OX=10090 GN=Bmpr1a PE=4 SV=2"
         seq = [
@@ -52,6 +54,7 @@ class TestFastaFragment(unittest.TestCase):
 
 
 class TestFastaParser(unittest.TestCase):
+    """Tests for the upfilter FastaParser class."""
     def test_parse_header(self):
         header = ">sp|P11111|NECK2_BPT4 Neck protein gp14 OS=Enterobacteria phage T4 OX=10665 GN=14 PE=1 SV=1"
         fields = FastaParser._parse_header(header)
