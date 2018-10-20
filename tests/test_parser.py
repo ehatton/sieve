@@ -106,7 +106,3 @@ class TestFastaParser(unittest.TestCase):
     def test_file_format_check(self):
         invalid_fasta = StringIO("ID   BRCA1_MOUSE\nAC   P12345\n")
         self.assertRaises(ValueError, FastaParser, invalid_fasta)
-
-
-if __name__ == "__main__":
-    unittest.main()
