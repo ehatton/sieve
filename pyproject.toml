@@ -7,6 +7,7 @@ module = "upfilter"
 author = "Emma Hatton-Ellis"
 author-email = "ehattonellis@gmail.com"
 classifiers = ["License :: OSI Approved :: MIT License"]
+requires-python = ">=3.6"
 
 [tool.flit.scripts]
 upfilter = "upfilter.cli:main"
