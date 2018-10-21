@@ -20,6 +20,11 @@ class TestCLI(unittest.TestCase):
         filtered_fasta = list(cli.filter_all(self.fasta_list, reviewed="no"))
         self.assertEqual(len(filtered_fasta), 0)
 
+    def test_filter_accession(self):
+        filtered_fasta = list(cli.filter_all(self.fasta_list, accession="Q2KIJ1"))
+        self.assertEqual(len(filtered_fasta), 1)
+        self.assertEqual(filtered_fasta[0].entry_name, "SHLD1_BOVIN")
+
     def test_filter_minlen_200(self):
         filtered_fasta = list(cli.filter_all(self.fasta_list, minlen=200))
         self.assertEqual(len(filtered_fasta), 3)
@@ -59,7 +64,7 @@ class TestCLI(unittest.TestCase):
     def test_filter_gene(self):
         filtered_fasta = list(cli.filter_all(self.fasta_list, gene=("Shld1",)))
         self.assertEqual(len(filtered_fasta), 1)
-        self.assertEqual(filtered_fasta[0].taxid, '10090')
+        self.assertEqual(filtered_fasta[0].taxid, "10090")
 
     def test_filter_evidence(self):
         filtered_fasta = list(cli.filter_all(self.fasta_list, evidence=(1,)))
