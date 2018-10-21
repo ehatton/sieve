@@ -3,7 +3,9 @@ from upfilter.fasta_parser import FastaParser
 
 
 # Define help strings for the various options
-FILTER_HELP = "Filter by reviewed (SwissProt) or unreviewed (TrEMBL) sequences."
+REVIEWED_HELP = "Filter by reviewed (SwissProt) or unreviewed (TrEMBL) sequences."
+ACCESSION_HELP = 'Filter by accession number(s). You can have multiple accessions e.g. "-a P11111\
+ -a P22222".'
 MINLEN_HELP = "Filter by minimun sequence length."
 MAXLEN_HELP = "Filter by maxinum sequence length."
 TAXID_HELP = 'Filter by NCBI taxonomy ID. You can have multiple taxids e.g. "-t 9606 -t 10090" \
@@ -11,12 +13,13 @@ will select both human and mouse sequences.'
 GENE_HELP = 'Filter by gene name. Names are case sensitive. You can have multiple gene names e.g.\
  "-g Shld1 -g SHLD1".'
 EVIDENCE_HELP = 'Filter by protein evidence level. You can have multiple evidence levels e.g. \
-"-e 1 -e 2 -e 3" to select evidence levels in the range of 1-3.'
+"-e 1 -e 2 -e 3" to select evidence levels 1-3.'
 
 
 def filter_all(
     fasta_list=None,
     reviewed=None,
+    accession=(),
     minlen=None,
     maxlen=None,
     taxid=(),
@@ -30,6 +33,8 @@ def filter_all(
     elif reviewed == "no":
         fasta_list = filter(lambda x: not x.reviewed, fasta_list)
 
+    if len(accession) is not 0:
+        fasta_list = filter(lambda x: x.accession in accession, fasta_list)
     if len(taxid) is not 0:
         fasta_list = filter(lambda x: x.taxid in taxid, fasta_list)
     if minlen is not None:
@@ -47,7 +52,8 @@ def filter_all(
 @click.command()
 @click.argument("infile", type=click.File(mode="r"))
 @click.argument("outfile", type=click.File(mode="w"))
-@click.option("-r", "--reviewed", type=click.Choice(["yes", "no"]), help=FILTER_HELP)
+@click.option("-r", "--reviewed", type=click.Choice(["yes", "no"]), help=REVIEWED_HELP)
+@click.option("-a", "--accession", multiple=True, help=ACCESSION_HELP)
 @click.option("-min", "--minlen", type=int, help=MINLEN_HELP)
 @click.option("-max", "--maxlen", type=int, help=MAXLEN_HELP)
 @click.option("-t", "--taxid", multiple=True, help=TAXID_HELP)
@@ -59,12 +65,12 @@ def filter_all(
     multiple=True,
     help=EVIDENCE_HELP,
 )
-def main(infile, outfile, reviewed, minlen, maxlen, taxid, gene, evidence):
-    """Reads in file containing UniProt fasta sequences.
-    Filters the sequences depending on selected options.
+def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evidence):
+    """Reads in a file containing UniProt fasta sequences. Filters the sequences 
+    depending on selected options.
     
     Required positional arguments are INFILE and OUTFILE, which should point
-    to valid filenames. To use stdin and/or stdout instead, pass \"-\" as 
+    to valid filenames. To use stdin and/or stdout instead, pass \"-\" as the
     argument."""
 
     # Convert evidence list to int, since click only allows string types in click.Choice
@@ -73,7 +79,7 @@ def main(infile, outfile, reviewed, minlen, maxlen, taxid, gene, evidence):
     # Generate, filter, and output the fasta list
     fasta_list = FastaParser(infile)
     filtered_fasta = filter_all(
-        fasta_list, reviewed, minlen, maxlen, taxid, gene, evidence
+        fasta_list, reviewed, accession, minlen, maxlen, taxid, gene, evidence
     )
     for f in filtered_fasta:
         outfile.write(f.format())
