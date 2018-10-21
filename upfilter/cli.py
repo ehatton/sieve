@@ -9,13 +9,19 @@ MAXLEN_HELP = "Filter by maxinum sequence length."
 TAXID_HELP = 'Filter by NCBI taxonomy ID. You can have multiple taxids e.g. "-t 9606 -t 10090" \
 will select both human and mouse sequences.'
 GENE_HELP = 'Filter by gene name. Names are case sensitive. You can have multiple gene names e.g.\
- \"-g Shld1 -g SHLD1\".'
+ "-g Shld1 -g SHLD1".'
 EVIDENCE_HELP = 'Filter by protein evidence level. You can have multiple evidence levels e.g. \
 "-e 1 -e 2 -e 3" to select evidence levels in the range of 1-3.'
 
 
 def filter_all(
-    fasta_list=None, reviewed=None, minlen=None, maxlen=None, taxid=(), gene=(), evidence=()
+    fasta_list=None,
+    reviewed=None,
+    minlen=None,
+    maxlen=None,
+    taxid=(),
+    gene=(),
+    evidence=(),
 ):
     """Accepts a list of fasta objects and optional filtering parameters.
     Returns a filtered list of fasta objects."""
@@ -45,7 +51,7 @@ def filter_all(
 @click.option("-min", "--minlen", type=int, help=MINLEN_HELP)
 @click.option("-max", "--maxlen", type=int, help=MAXLEN_HELP)
 @click.option("-t", "--taxid", multiple=True, help=TAXID_HELP)
-@click.option("-g", '--gene', multiple=True, help=GENE_HELP)
+@click.option("-g", "--gene", multiple=True, help=GENE_HELP)
 @click.option(
     "-e",
     "--evidence",
@@ -55,13 +61,19 @@ def filter_all(
 )
 def main(infile, outfile, reviewed, minlen, maxlen, taxid, gene, evidence):
     """Reads in file containing UniProt fasta sequences.
-    Filters the sequences depending on selected options."""
+    Filters the sequences depending on selected options.
+    
+    Required positional arguments are INFILE and OUTFILE, which should point
+    to valid filenames. To use stdin and/or stdout instead, pass \"-\" as 
+    argument."""
 
     # Convert evidence list to int, since click only allows string types in click.Choice
     evidence = tuple(int(x) for x in evidence)
 
     # Generate, filter, and output the fasta list
     fasta_list = FastaParser(infile)
-    filtered_fasta = filter_all(fasta_list, reviewed, minlen, maxlen, taxid, gene, evidence)
+    filtered_fasta = filter_all(
+        fasta_list, reviewed, minlen, maxlen, taxid, gene, evidence
+    )
     for f in filtered_fasta:
         outfile.write(f.format())
