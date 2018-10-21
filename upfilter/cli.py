@@ -2,7 +2,9 @@ import click
 from upfilter.fasta_parser import FastaParser
 
 
-def filter_all(fasta_list=None, reviewed=None, minlen=None, maxlen=None, taxid=(), evidence=()):
+def filter_all(
+    fasta_list=None, reviewed=None, minlen=None, maxlen=None, taxid=(), evidence=()
+):
     if reviewed == "yes":
         fasta_list = filter(lambda x: x.reviewed, fasta_list)
     elif reviewed == "no":
@@ -23,13 +25,32 @@ def filter_all(fasta_list=None, reviewed=None, minlen=None, maxlen=None, taxid=(
 @click.command()
 @click.argument("infile", type=click.File(mode="r"))
 @click.argument("outfile", type=click.File(mode="w"))
-@click.option("-r", "--reviewed", type=click.Choice(["yes", "no"]))
-@click.option("-min", "--minlen", type=int)
-@click.option("-max", "--maxlen", type=int)
-@click.option("-t", "--taxid", multiple=True)
-@click.option("-e", "--evidence", type=click.Choice(['1', '2', '3', '4', '5']), multiple=True)
+@click.option(
+    "-r",
+    "--reviewed",
+    type=click.Choice(["yes", "no"]),
+    help="Filter by reviewed (SwissProt) or unreviewed (TrEMBL) sequences.",
+)
+@click.option("-min", "--minlen", type=int, help="Filter by minimun sequence length.")
+@click.option("-max", "--maxlen", type=int, help="Filter by maxinum sequence length.")
+@click.option(
+    "-t",
+    "--taxid",
+    multiple=True,
+    help="Filter by NCBI taxonomy ID. You can have multiple taxids e.g. \"-t 9606 -t 10090\" will \
+select both human and mouse sequences.",
+)
+@click.option(
+    "-e",
+    "--evidence",
+    type=click.Choice(["1", "2", "3", "4", "5"]),
+    multiple=True,
+    help="Filter by protein evidence level. You can have multiple evidence levels e.g. \"-e 1 -e\
+ 2 -e 3\" to select evidence levels in the range of 1-3.",
+)
 def main(infile, outfile, reviewed, minlen, maxlen, taxid, evidence):
-    """Entry point to program. Parses command line arguments and outputs filtered fasta sequences."""
+    """Reads in file containing UniProt fasta sequences.
+    Filters the sequences depending on selected options."""
 
     # Convert evidence list to int, since click only allows string types in click.Choice
     evidence = tuple(int(x) for x in evidence)
@@ -39,7 +60,3 @@ def main(infile, outfile, reviewed, minlen, maxlen, taxid, evidence):
     filtered_fasta = filter_all(fasta_list, reviewed, minlen, maxlen, taxid, evidence)
     for f in filtered_fasta:
         outfile.write(f.format())
-
-
-if __name__ == "__main__":
-    main() # pylint: disable=no-value-for-parameter
