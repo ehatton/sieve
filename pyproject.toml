@@ -12,6 +12,7 @@ classifiers = [
     "Programming Language :: Python :: 3.6",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
     ]
+requires = ["click >=7.0"]
 requires-python = ">=3.6"
 
 [tool.flit.scripts]
