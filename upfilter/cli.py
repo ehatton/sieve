@@ -2,9 +2,21 @@ import click
 from upfilter.fasta_parser import FastaParser
 
 
+# Define help strings for the various options
+FILTER_HELP = "Filter by reviewed (SwissProt) or unreviewed (TrEMBL) sequences."
+MINLEN_HELP = "Filter by minimun sequence length."
+MAXLEN_HELP = "Filter by maxinum sequence length."
+TAXID_HELP = 'Filter by NCBI taxonomy ID. You can have multiple taxids e.g. "-t 9606 -t 10090" \
+will select both human and mouse sequences.'
+EVIDENCE_HELP = 'Filter by protein evidence level. You can have multiple evidence levels e.g. \
+"-e 1 -e 2 -e 3" to select evidence levels in the range of 1-3.'
+
+
 def filter_all(
     fasta_list=None, reviewed=None, minlen=None, maxlen=None, taxid=(), evidence=()
 ):
+    """Accepts a list of fasta objects and optional filtering parameters.
+    Returns a filtered list of fasta objects."""
     if reviewed == "yes":
         fasta_list = filter(lambda x: x.reviewed, fasta_list)
     elif reviewed == "no":
@@ -25,28 +37,16 @@ def filter_all(
 @click.command()
 @click.argument("infile", type=click.File(mode="r"))
 @click.argument("outfile", type=click.File(mode="w"))
-@click.option(
-    "-r",
-    "--reviewed",
-    type=click.Choice(["yes", "no"]),
-    help="Filter by reviewed (SwissProt) or unreviewed (TrEMBL) sequences.",
-)
-@click.option("-min", "--minlen", type=int, help="Filter by minimun sequence length.")
-@click.option("-max", "--maxlen", type=int, help="Filter by maxinum sequence length.")
-@click.option(
-    "-t",
-    "--taxid",
-    multiple=True,
-    help="Filter by NCBI taxonomy ID. You can have multiple taxids e.g. \"-t 9606 -t 10090\" will \
-select both human and mouse sequences.",
-)
+@click.option("-r", "--reviewed", type=click.Choice(["yes", "no"]), help=FILTER_HELP)
+@click.option("-min", "--minlen", type=int, help=MINLEN_HELP)
+@click.option("-max", "--maxlen", type=int, help=MAXLEN_HELP)
+@click.option("-t", "--taxid", multiple=True, help=TAXID_HELP)
 @click.option(
     "-e",
     "--evidence",
     type=click.Choice(["1", "2", "3", "4", "5"]),
     multiple=True,
-    help="Filter by protein evidence level. You can have multiple evidence levels e.g. \"-e 1 -e\
- 2 -e 3\" to select evidence levels in the range of 1-3.",
+    help=EVIDENCE_HELP,
 )
 def main(infile, outfile, reviewed, minlen, maxlen, taxid, evidence):
     """Reads in file containing UniProt fasta sequences.
