@@ -56,6 +56,11 @@ class TestCLI(unittest.TestCase):
         )
         self.assertEqual(len(filtered_fasta), 0)
 
+    def test_filter_gene(self):
+        filtered_fasta = list(cli.filter_all(self.fasta_list, gene=("Shld1",)))
+        self.assertEqual(len(filtered_fasta), 1)
+        self.assertEqual(filtered_fasta[0].taxid, '10090')
+
     def test_filter_evidence(self):
         filtered_fasta = list(cli.filter_all(self.fasta_list, evidence=(1,)))
         self.assertEqual(len(filtered_fasta), 1)
