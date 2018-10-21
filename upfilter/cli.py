@@ -2,7 +2,7 @@ import click
 from upfilter.fasta_parser import FastaParser
 
 
-def filter_all(fasta_list, reviewed, minlen, maxlen, taxid, evidence):
+def filter_all(fasta_list=None, reviewed=None, minlen=None, maxlen=None, taxid=(), evidence=()):
     if reviewed == "yes":
         fasta_list = filter(lambda x: x.reviewed, fasta_list)
     elif reviewed == "no":
@@ -30,7 +30,7 @@ def filter_all(fasta_list, reviewed, minlen, maxlen, taxid, evidence):
 @click.option("-e", "--evidence", type=click.Choice(['1', '2', '3', '4', '5']), multiple=True)
 def main(infile, outfile, reviewed, minlen, maxlen, taxid, evidence):
     """Entry point to program. Parses command line arguments and outputs filtered fasta sequences."""
-    
+
     # Convert evidence list to int, since click only allows string types in click.Choice
     evidence = tuple(int(x) for x in evidence)
 
