@@ -79,16 +79,16 @@ class FastaParser:
 class Fasta:
     def __init__(
         self,
-        reviewed,
-        accession,
-        entry_name,
-        name,
-        species,
-        taxid,
-        gene,
-        evidence,
-        version,
-        fragment,
+        reviewed=False,
+        accession=None,
+        entry_name=None,
+        name=None,
+        species=None,
+        taxid=None,
+        gene=None,
+        evidence=None,
+        version=None,
+        fragment=False,
         sequence_lines=[],
     ):
         self.reviewed = reviewed
@@ -129,6 +129,10 @@ class Fasta:
         header = f">{status}|{self.accession}|{self.entry_name} {name} OS={self.species} OX={self.taxid} GN={self.gene} PE={str(self.evidence)} SV={str(self.version)}"
         return header
 
-    def format(self):
-        """Returns a nicely formatted multiline fasta string."""
-        return f"{self.header()}\n{''.join(i for i in self.sequence_lines)}"
+    def format(self, line_length=60):
+        """Returns a nicely formatted multiline fasta string.
+        The line_length parameter can be used to set the sequence line length."""
+        formatted_sequence = ""
+        for i in range(0, len(self), line_length):
+            formatted_sequence += self.sequence[i:i+line_length] + '\n'
+        return f"{self.header()}\n{formatted_sequence}"
