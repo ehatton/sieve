@@ -134,7 +134,7 @@ class Fasta:
         The line_length parameter can be used to set the sequence line length."""
         formatted_sequence = ""
         for i in range(0, len(self), line_length):
-            formatted_sequence += self.sequence[i:i+line_length] + '\n'
+            formatted_sequence += self.sequence[i : i + line_length] + "\n"
         # Remove trailing newline
         formatted_sequence = formatted_sequence.strip()
         return f"{self.header()}\n{formatted_sequence}"
