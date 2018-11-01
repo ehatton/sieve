@@ -134,3 +134,13 @@ class TestFastaParser(unittest.TestCase):
     def test_file_format_check(self):
         invalid_fasta = StringIO("ID   BRCA1_MOUSE\nAC   P12345\n")
         self.assertRaises(ValueError, FastaParser, invalid_fasta)
+
+    def test_file_format_check_sp(self):
+        valid_sp = StringIO(">sp|Q9D112|SHLD1_MOUSE ")
+        # Check that instantiating the class doesn't throw an error
+        FastaParser(valid_sp)
+
+    def test_file_format_check_tr(self):
+        valid_tr = StringIO(">tr|A0A075F882|A0A075F882_MOUSE")
+        # Check that instantiating the class doesn't throw an error
+        FastaParser(valid_tr)
