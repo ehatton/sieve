@@ -1,5 +1,5 @@
 import click
-from upfilter.fasta_parser import FastaParser
+from upfilter import FastaParser
 
 
 # Define help strings for the various options
@@ -73,7 +73,7 @@ def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evid
     to valid filenames. To use stdin and/or stdout instead, pass \"-\" as the
     argument."""
 
-    # Convert evidence list to int, since click only allows string types in click.Choice
+    # Convert evidence list to int, since click only allows string types for click.Choice type
     evidence = tuple(int(x) for x in evidence)
 
     # Generate, filter, and output the fasta list
