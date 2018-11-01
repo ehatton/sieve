@@ -99,6 +99,20 @@ class TestFastaParser(unittest.TestCase):
         self.assertEqual(fields[8], 1)
         self.assertEqual(fields[9], False)
 
+    def test_parse_header_trembl(self):
+        header = ">tr|A0A075F882|A0A075F882_MOUSE Heat shock factor 1, isoform CRA_a OS=Mus musculus OX=10090 GN=Hsf1 PE=2 SV=1"
+        fields = FastaParser._parse_header(header)
+        self.assertEqual(fields[0], False)
+        self.assertEqual(fields[1], "A0A075F882")
+        self.assertEqual(fields[2], "A0A075F882_MOUSE")
+        self.assertEqual(fields[3], "Heat shock factor 1, isoform CRA_a")
+        self.assertEqual(fields[4], "Mus musculus")
+        self.assertEqual(fields[5], "10090")
+        self.assertEqual(fields[6], "Hsf1")
+        self.assertEqual(fields[7], 2)
+        self.assertEqual(fields[8], 1)
+        self.assertEqual(fields[9], False)
+
     def test_parser(self):
         with open("tests/samples/SHLD1.fasta", "r") as infile:
             fasta = list(i for i in FastaParser(infile))
@@ -108,6 +122,14 @@ class TestFastaParser(unittest.TestCase):
         self.assertIsInstance(fasta[0], Fasta)
         # Check that the sequence of the last item is the expected length
         self.assertEqual(len(fasta[2]), 206)
+
+    def test_parser_trembl(self):
+        with open("tests/samples/A0A075F882.fasta", "r") as infile:
+            fasta = list(i for i in FastaParser(infile))
+        # Check that we get a list of 1 item
+        self.assertEqual(len(fasta), 1)
+        # Check that the items are Fasta objects
+        self.assertIsInstance(fasta[0], Fasta)
 
     def test_file_format_check(self):
         invalid_fasta = StringIO("ID   BRCA1_MOUSE\nAC   P12345\n")

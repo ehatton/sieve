@@ -9,7 +9,7 @@ class FastaParser:
         self.filehandle = filehandle
         self.line = next(self.filehandle)
         # A simple test to check that the file looks like UniProt fasta format
-        if not self.line.startswith(">sp") or self.line.startswith(">tr"):
+        if not self.line.startswith((">sp", ">tr")):
             raise ValueError(
                 "Invalid file format. This parser requires a UniProt fasta format file."
             )
@@ -45,7 +45,7 @@ class FastaParser:
         # A hideous regex for parsing the header line
         # Note that the gene name is optional so there is a nested capture group for this
         header_re = re.compile(
-            r"^>(sp|tr)\|(\w{6,10})\|(\w{,6}_\w{,5})\s(.+)\sOS=(.+)\sOX=(\d+)\s(GN=(.+)\s)*PE=(\d)\sSV=(\d+)$"
+            r"^>(sp|tr)\|(\w{6,10})\|(\w{,10}_\w{,5})\s(.+)\sOS=(.+)\sOX=(\d+)\s(GN=(.+)\s)*PE=(\d)\sSV=(\d+)$"
         )
         captures = re.match(header_re, line).groups()
 
@@ -135,6 +135,4 @@ class Fasta:
         formatted_sequence = ""
         for i in range(0, len(self), line_length):
             formatted_sequence += self.sequence[i : i + line_length] + "\n"
-        # Remove trailing newline
-        formatted_sequence = formatted_sequence.strip()
         return f"{self.header()}\n{formatted_sequence}"
