@@ -8,7 +8,7 @@ A little bioinformatics command line tool, for filtering and extracting UniProt 
 Download the latest wheel file from the releases tab and then install with the following pip command:
 
 ```bash
-pip install 
+pip install upfilter-0.0.0-py3-none-any.whl 
 ```
 
 ## Usage examples
