@@ -1,5 +1,5 @@
 import click
-from upfilter import UniProtFastaParser
+from sieve import FastaParser
 
 
 # Define help strings for the various options
@@ -77,7 +77,7 @@ def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evid
     evidence = tuple(int(x) for x in evidence)
 
     # Generate, filter, and output the fasta list
-    fasta_list = UniProtFastaParser(infile)
+    fasta_list = FastaParser(infile)
     filtered_fasta = filter_all(
         fasta_list, reviewed, accession, minlen, maxlen, taxid, gene, evidence
     )

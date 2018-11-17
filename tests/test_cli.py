@@ -1,8 +1,8 @@
 import unittest
-import upfilter.cli as cli
+import sieve.cli as cli
 from click.testing import CliRunner
 from collections import namedtuple
-from upfilter import UniProtFastaParser
+from sieve import FastaParser
 
 
 # Defining some constants for expected fasta outputs
@@ -33,7 +33,7 @@ class TestCliFilter(unittest.TestCase):
 
     def setUp(self):
         with open("tests/samples/SHLD1.fasta", "r") as infile:
-            fasta_list = list(UniProtFastaParser(infile))
+            fasta_list = list(FastaParser(infile))
         self.fasta_list = fasta_list
 
     def test_filter_reviewed_yes(self):

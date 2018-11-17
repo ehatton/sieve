@@ -1,0 +1,777 @@
+ID   PIAS4_HUMAN             Reviewed;         510 AA.
+AC   Q8N2W9; O75926; Q96G19; Q9UN16;
+DT   19-SEP-2003, integrated into UniProtKB/Swiss-Prot.
+DT   01-OCT-2002, sequence version 1.
+DT   12-SEP-2018, entry version 164.
+DE   RecName: Full=E3 SUMO-protein ligase PIAS4;
+DE            EC=2.3.2.27;
+DE   AltName: Full=PIASy;
+DE   AltName: Full=Protein inhibitor of activated STAT protein 4;
+DE   AltName: Full=Protein inhibitor of activated STAT protein gamma;
+DE            Short=PIAS-gamma;
+DE   AltName: Full=RING-type E3 ubiquitin transferase PIAS4 {ECO:0000305};
+GN   Name=PIAS4; Synonyms=PIASG;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606 {ECO:0000312|EMBL:AAH29874.1};
+RN   [1] {ECO:0000305}
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=B-cell;
+RX   PubMed=9724754; DOI=10.1073/pnas.95.18.10626;
+RA   Liu B., Liao J., Rao X., Kushner S.A., Chung C.D., Chang D.D.,
+RA   Shuai K.;
+RT   "Inhibition of Stat1-mediated gene activation by PIAS1.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 95:10626-10631(1998).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Brain, Lung, and Skin;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [3] {ECO:0000305}
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 10-510, AND INTERACTION WITH TP53.
+RX   PubMed=11388671; DOI=10.1023/A:1011392811628;
+RA   Nelson V., Davis G.E., Maxwell S.A.;
+RT   "A putative protein inhibitor of activated STAT (PIASy) interacts with
+RT   p53 and inhibits p53-mediated transactivation but not apoptosis.";
+RL   Apoptosis 6:221-234(2001).
+RN   [4] {ECO:0000305}
+RP   INTERACTION WITH STAT1, SUBCELLULAR LOCATION, AND MUTAGENESIS OF
+RP   23-LEU-LEU-24.
+RX   PubMed=11248056; DOI=10.1073/pnas.051489598;
+RA   Liu B., Gross M., ten Hoeve J., Shuai K.;
+RT   "A transcriptional corepressor of Stat1 with an essential LXXLL
+RT   signature motif.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 98:3203-3207(2001).
+RN   [5]
+RP   INTERACTION WITH AR, TISSUE SPECIFICITY, AND MUTAGENESIS OF
+RP   23-LEU-LEU-24.
+RX   PubMed=11439351; DOI=10.1038/sj.onc.1204489;
+RA   Gross M., Liu B., Tan J.-A., French F.S., Carey M., Shuai K.;
+RT   "Distinct effects of PIAS proteins on androgen-mediated gene
+RT   activation in prostate cancer cells.";
+RL   Oncogene 20:3880-3887(2001).
+RN   [6]
+RP   INTERACTION WITH AXIN1.
+RX   PubMed=12223491; DOI=10.1074/jbc.M208099200;
+RA   Rui H.L., Fan E., Zhou H.M., Xu Z., Zhang Y., Lin S.C.;
+RT   "SUMO-1 modification of the C-terminal KVEKVD of Axin is required for
+RT   JNK activation but has no effect on Wnt signaling.";
+RL   J. Biol. Chem. 277:42981-42986(2002).
+RN   [7]
+RP   INTERACTION WITH GATA2.
+RX   PubMed=12750312; DOI=10.1161/01.RES.0000076893.70898.36;
+RA   Chun T.-H., Itoh H., Subramanian L., Iniguez-Lluhi J.A., Nakao K.;
+RT   "Modification of GATA-2 transcriptional activity in endothelial cells
+RT   by the SUMO E3 ligase PIASy.";
+RL   Circ. Res. 92:1201-1208(2003).
+RN   [8]
+RP   FUNCTION IN SUMOYLATION OF TCF4, SUBCELLULAR LOCATION, AND MUTAGENESIS
+RP   OF LYS-35 AND LYS-128.
+RX   PubMed=12727872; DOI=10.1093/emboj/cdg204;
+RA   Yamamoto H., Ihara M., Matsuura Y., Kikuchi A.;
+RT   "Sumoylation is involved in beta-catenin-dependent activation of Tcf-
+RT   4.";
+RL   EMBO J. 22:2047-2059(2003).
+RN   [9]
+RP   FUNCTION IN SUMOYLATION OF MYB.
+RX   PubMed=12631292; DOI=10.1046/j.1432-1033.2003.03504.x;
+RA   Dahle O., Andersen T.O., Nordgaard O., Matre V., Del Sal G.,
+RA   Gabrielsen O.S.;
+RT   "Transactivation properties of c-Myb are critically dependent on two
+RT   SUMO-1 acceptor sites that are conjugated in a PIASy enhanced
+RT   manner.";
+RL   Eur. J. Biochem. 270:1338-1348(2003).
+RN   [10]
+RP   FUNCTION IN SUMOYLATION OF CEBPA.
+RX   PubMed=12511558; DOI=10.1074/jbc.M210440200;
+RA   Subramanian L., Benson M.D., Iniguez-Lluhi J.A.;
+RT   "A synergy control motif within the attenuator domain of
+RT   CCAAT/enhancer-binding protein alpha inhibits transcriptional synergy
+RT   through its PIASy-enhanced modification by SUMO-1 or SUMO-3.";
+RL   J. Biol. Chem. 278:9134-9141(2003).
+RN   [11]
+RP   INTERACTION WITH TICAM1.
+RX   PubMed=15251447; DOI=10.1016/j.febslet.2004.05.081;
+RA   Zhang J., Xu L.G., Han K.J., Wei X., Shu H.B.;
+RT   "PIASy represses TRIF-induced ISRE and NF-kappaB activation but not
+RT   apoptosis.";
+RL   FEBS Lett. 570:97-101(2004).
+RN   [12]
+RP   SUMOYLATION AT LYS-35 AND LYS-128, FUNCTION IN SUMOYLATION OF TCF4,
+RP   SUBCELLULAR LOCATION, AND MUTAGENESIS OF LYS-35 AND LYS-128.
+RX   PubMed=15831457; DOI=10.1128/MCB.25.9.3506-3518.2005;
+RA   Ihara M., Yamamoto H., Kikuchi A.;
+RT   "SUMO-1 modification of PIASy, an E3 ligase, is necessary for PIASy-
+RT   dependent activation of Tcf-4.";
+RL   Mol. Cell. Biol. 25:3506-3518(2005).
+RN   [13]
+RP   FUNCTION IN SUMOYLATION OF PARK7.
+RX   PubMed=15976810; DOI=10.1038/sj.cdd.4401704;
+RA   Shinbo Y., Niki T., Taira T., Ooe H., Takahashi-Niki K., Maita C.,
+RA   Seino C., Iguchi-Ariga S.M.M., Ariga H.;
+RT   "Proper SUMO-1 conjugation is essential to DJ-1 to exert its full
+RT   activities.";
+RL   Cell Death Differ. 13:96-108(2006).
+RN   [14]
+RP   INTERACTION WITH KLF8.
+RX   PubMed=16617055; DOI=10.1074/jbc.M513135200;
+RA   Wei H., Wang X., Gan B., Urvalek A.M., Melkoumian Z.K., Guan J.-L.,
+RA   Zhao J.;
+RT   "Sumoylation delimits KLF8 transcriptional activity associated with
+RT   the cell cycle regulation.";
+RL   J. Biol. Chem. 281:16664-16671(2006).
+RN   [15]
+RP   ACETYLATION [LARGE SCALE ANALYSIS] AT ALA-2, CLEAVAGE OF INITIATOR
+RP   METHIONINE [LARGE SCALE ANALYSIS], AND IDENTIFICATION BY MASS
+RP   SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=19413330; DOI=10.1021/ac9004309;
+RA   Gauci S., Helbig A.O., Slijper M., Krijgsveld J., Heck A.J.,
+RA   Mohammed S.;
+RT   "Lys-N and trypsin cover complementary parts of the phosphoproteome in
+RT   a refined SCX-based approach.";
+RL   Anal. Chem. 81:4493-4501(2009).
+RN   [16]
+RP   ACETYLATION [LARGE SCALE ANALYSIS] AT LYS-114, AND IDENTIFICATION BY
+RP   MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=19608861; DOI=10.1126/science.1175371;
+RA   Choudhary C., Kumar C., Gnad F., Nielsen M.L., Rehman M.,
+RA   Walther T.C., Olsen J.V., Mann M.;
+RT   "Lysine acetylation targets protein complexes and co-regulates major
+RT   cellular functions.";
+RL   Science 325:834-840(2009).
+RN   [17]
+RP   FUNCTION, AND INTERACTION WITH MTA1.
+RX   PubMed=21965678; DOI=10.1074/jbc.M111.267237;
+RA   Cong L., Pakala S.B., Ohshiro K., Li D.Q., Kumar R.;
+RT   "SUMOylation and SUMO-interacting motif (SIM) of metastasis tumor
+RT   antigen 1 (MTA1) synergistically regulate its transcriptional
+RT   repressor function.";
+RL   J. Biol. Chem. 286:43793-43808(2011).
+RN   [18]
+RP   FUNCTION IN SUMOYLATION OF HERC2 AND RNF168.
+RX   PubMed=22508508; DOI=10.1083/jcb.201106152;
+RA   Danielsen J.R., Povlsen L.K., Villumsen B.H., Streicher W.,
+RA   Nilsson J., Wikstrom M., Bekker-Jensen S., Mailand N.;
+RT   "DNA damage-inducible SUMOylation of HERC2 promotes RNF8 binding via a
+RT   novel SUMO-binding Zinc finger.";
+RL   J. Cell Biol. 197:179-187(2012).
+RN   [19]
+RP   SUMOYLATION [LARGE SCALE ANALYSIS] AT LYS-59, AND IDENTIFICATION BY
+RP   MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=25218447; DOI=10.1038/nsmb.2890;
+RA   Hendriks I.A., D'Souza R.C., Yang B., Verlaan-de Vries M., Mann M.,
+RA   Vertegaal A.C.;
+RT   "Uncovering global SUMOylation signaling networks in a site-specific
+RT   manner.";
+RL   Nat. Struct. Mol. Biol. 21:927-936(2014).
+RN   [20]
+RP   SUMOYLATION [LARGE SCALE ANALYSIS] AT LYS-9; LYS-35; LYS-56; LYS-59;
+RP   LYS-68; LYS-69 AND LYS-125, AND IDENTIFICATION BY MASS SPECTROMETRY
+RP   [LARGE SCALE ANALYSIS].
+RX   PubMed=28112733; DOI=10.1038/nsmb.3366;
+RA   Hendriks I.A., Lyon D., Young C., Jensen L.J., Vertegaal A.C.,
+RA   Nielsen M.L.;
+RT   "Site-specific mapping of the human SUMO proteome reveals co-
+RT   modification with phosphorylation.";
+RL   Nat. Struct. Mol. Biol. 24:325-336(2017).
+CC   -!- FUNCTION: Functions as an E3-type small ubiquitin-like modifier
+CC       (SUMO) ligase, stabilizing the interaction between UBE2I and the
+CC       substrate, and as a SUMO-tethering factor. Plays a crucial role as
+CC       a transcriptional coregulation in various cellular pathways,
+CC       including the STAT pathway, the p53/TP53 pathway, the Wnt pathway
+CC       and the steroid hormone signaling pathway. Involved in gene
+CC       silencing. Mediates sumoylation of CEBPA, PARK7, HERC2, MYB, TCF4
+CC       and RNF168. In Wnt signaling, represses LEF1 and enhances TCF4
+CC       transcriptional activities through promoting their sumoylations.
+CC       Enhances the sumoylation of MTA1 and may participate in its
+CC       paralog-selective sumoylation. {ECO:0000269|PubMed:12511558,
+CC       ECO:0000269|PubMed:12631292, ECO:0000269|PubMed:12727872,
+CC       ECO:0000269|PubMed:15831457, ECO:0000269|PubMed:15976810,
+CC       ECO:0000269|PubMed:21965678, ECO:0000269|PubMed:22508508}.
+CC   -!- CATALYTIC ACTIVITY: S-ubiquitinyl-[E2 ubiquitin-conjugating
+CC       enzyme]-L-cysteine + [acceptor protein]-L-lysine = [E2 ubiquitin-
+CC       conjugating enzyme]-L-cysteine + N(6)-ubiquitinyl-[acceptor
+CC       protein]-L-lysine.
+CC   -!- PATHWAY: Protein modification; protein sumoylation.
+CC   -!- SUBUNIT: Interacts with AR, AXIN1, GATA2, LEF1, TP53 and STAT1
+CC       (IFNG-induced). Binds to AT-rich DNA sequences, known as matrix or
+CC       scaffold attachment regions (MARs/SARs) (By similarity). Interacts
+CC       with TICAM1. Interacts with KLF8; the interaction results in SUMO
+CC       ligation and repression of KLF8 transcriptional activity and of
+CC       its cell cycle progression into G(1) phase. Interacts with MTA1.
+CC       {ECO:0000250, ECO:0000269|PubMed:11248056,
+CC       ECO:0000269|PubMed:11388671, ECO:0000269|PubMed:11439351,
+CC       ECO:0000269|PubMed:12223491, ECO:0000269|PubMed:12750312,
+CC       ECO:0000269|PubMed:15251447, ECO:0000269|PubMed:16617055,
+CC       ECO:0000269|PubMed:21965678}.
+CC   -!- INTERACTION:
+CC       P11474:ESRRA; NbExp=3; IntAct=EBI-473160, EBI-372412;
+CC       Q16665:HIF1A; NbExp=3; IntAct=EBI-473160, EBI-447269;
+CC       P42858:HTT; NbExp=3; IntAct=EBI-473160, EBI-466029;
+CC       P09874:PARP1; NbExp=5; IntAct=EBI-473160, EBI-355676;
+CC       Q04206:RELA; NbExp=2; IntAct=EBI-473160, EBI-73886;
+CC       P61956:SUMO2; NbExp=3; IntAct=EBI-473160, EBI-473220;
+CC       O75528:TADA3; NbExp=2; IntAct=EBI-473160, EBI-473249;
+CC       P04637:TP53; NbExp=2; IntAct=EBI-473160, EBI-366083;
+CC   -!- SUBCELLULAR LOCATION: Nucleus, PML body
+CC       {ECO:0000269|PubMed:11248056, ECO:0000269|PubMed:12727872,
+CC       ECO:0000269|PubMed:15831457}. Note=Colocalizes with SUMO1 and
+CC       TCF7L2/TCF4 and LEF1 in a subset of PML (promyelocytic leukemia)
+CC       nuclear bodies.
+CC   -!- TISSUE SPECIFICITY: Highly expressed in testis and, at lower
+CC       levels, in spleen, prostate, ovary, colon and peripheral blood
+CC       leukocytes. {ECO:0000269|PubMed:11439351}.
+CC   -!- DOMAIN: The LXXLL motif is a coregulator signature that is
+CC       essential for transcriptional corepression.
+CC   -!- PTM: Sumoylated. Lys-35 is the main site of sumoylation.
+CC       Sumoylation is required for TCF4 sumoylation and transcriptional
+CC       activation. Represses LEF1 transcriptional activity. SUMO1 is the
+CC       preferred conjugate. {ECO:0000269|PubMed:15831457}.
+CC   -!- SIMILARITY: Belongs to the PIAS family. {ECO:0000305}.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=AAD45155.1; Type=Erroneous initiation; Evidence={ECO:0000305};
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF077952; AAC36703.1; -; mRNA.
+DR   EMBL; BC010047; AAH10047.2; -; mRNA.
+DR   EMBL; BC029874; AAH29874.1; -; mRNA.
+DR   EMBL; BC066895; AAH66895.1; -; mRNA.
+DR   EMBL; AF164437; AAD45155.1; ALT_INIT; mRNA.
+DR   CCDS; CCDS12118.1; -.
+DR   RefSeq; NP_056981.2; NM_015897.3.
+DR   UniGene; Hs.105779; -.
+DR   ProteinModelPortal; Q8N2W9; -.
+DR   SMR; Q8N2W9; -.
+DR   BioGrid; 119624; 129.
+DR   DIP; DIP-32499N; -.
+DR   ELM; Q8N2W9; -.
+DR   IntAct; Q8N2W9; 65.
+DR   MINT; Q8N2W9; -.
+DR   STRING; 9606.ENSP00000262971; -.
+DR   iPTMnet; Q8N2W9; -.
+DR   PhosphoSitePlus; Q8N2W9; -.
+DR   BioMuta; PIAS4; -.
+DR   DMDM; 34922831; -.
+DR   EPD; Q8N2W9; -.
+DR   MaxQB; Q8N2W9; -.
+DR   PaxDb; Q8N2W9; -.
+DR   PeptideAtlas; Q8N2W9; -.
+DR   PRIDE; Q8N2W9; -.
+DR   ProteomicsDB; 71739; -.
+DR   DNASU; 51588; -.
+DR   Ensembl; ENST00000262971; ENSP00000262971; ENSG00000105229.
+DR   GeneID; 51588; -.
+DR   KEGG; hsa:51588; -.
+DR   UCSC; uc002lzg.4; human.
+DR   CTD; 51588; -.
+DR   DisGeNET; 51588; -.
+DR   EuPathDB; HostDB:ENSG00000105229.6; -.
+DR   GeneCards; PIAS4; -.
+DR   HGNC; HGNC:17002; PIAS4.
+DR   HPA; HPA010598; -.
+DR   MIM; 605989; gene.
+DR   neXtProt; NX_Q8N2W9; -.
+DR   OpenTargets; ENSG00000105229; -.
+DR   PharmGKB; PA134945903; -.
+DR   eggNOG; KOG2169; Eukaryota.
+DR   eggNOG; ENOG410XQ2E; LUCA.
+DR   GeneTree; ENSGT00550000074410; -.
+DR   HOGENOM; HOG000230594; -.
+DR   HOVERGEN; HBG053598; -.
+DR   InParanoid; Q8N2W9; -.
+DR   KO; K16065; -.
+DR   OMA; LRICYTD; -.
+DR   OrthoDB; EOG091G08G5; -.
+DR   PhylomeDB; Q8N2W9; -.
+DR   TreeFam; TF323787; -.
+DR   Reactome; R-HSA-196791; Vitamin D (calciferol) metabolism.
+DR   Reactome; R-HSA-3108214; SUMOylation of DNA damage response and repair proteins.
+DR   Reactome; R-HSA-3232118; SUMOylation of transcription factors.
+DR   Reactome; R-HSA-3232142; SUMOylation of ubiquitinylation proteins.
+DR   Reactome; R-HSA-3899300; SUMOylation of transcription cofactors.
+DR   Reactome; R-HSA-4085377; SUMOylation of SUMOylation proteins.
+DR   Reactome; R-HSA-4090294; SUMOylation of intracellular receptors.
+DR   Reactome; R-HSA-4615885; SUMOylation of DNA replication proteins.
+DR   Reactome; R-HSA-4755510; SUMOylation of immune response proteins.
+DR   Reactome; R-HSA-5693565; Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks.
+DR   Reactome; R-HSA-5693571; Nonhomologous End-Joining (NHEJ).
+DR   Reactome; R-HSA-5693607; Processing of DNA double-strand break ends.
+DR   Reactome; R-HSA-69473; G2/M DNA damage checkpoint.
+DR   SignaLink; Q8N2W9; -.
+DR   SIGNOR; Q8N2W9; -.
+DR   UniPathway; UPA00886; -.
+DR   ChiTaRS; PIAS4; human.
+DR   GeneWiki; PIAS4; -.
+DR   GenomeRNAi; 51588; -.
+DR   PRO; PR:Q8N2W9; -.
+DR   Proteomes; UP000005640; Chromosome 19.
+DR   Bgee; ENSG00000105229; Expressed in 182 organ(s), highest expression level in testis.
+DR   CleanEx; HS_PIAS4; -.
+DR   Genevisible; Q8N2W9; HS.
+DR   GO; GO:0005737; C:cytoplasm; IDA:BHF-UCL.
+DR   GO; GO:0016363; C:nuclear matrix; IEA:Ensembl.
+DR   GO; GO:0005654; C:nucleoplasm; TAS:Reactome.
+DR   GO; GO:0005634; C:nucleus; IDA:UniProtKB.
+DR   GO; GO:0016605; C:PML body; IEA:UniProtKB-SubCell.
+DR   GO; GO:1990234; C:transferase complex; IEA:Ensembl.
+DR   GO; GO:0003677; F:DNA binding; IEA:UniProtKB-KW.
+DR   GO; GO:0008022; F:protein C-terminus binding; IEA:Ensembl.
+DR   GO; GO:0061665; F:SUMO ligase activity; IDA:BHF-UCL.
+DR   GO; GO:0019789; F:SUMO transferase activity; IMP:UniProtKB.
+DR   GO; GO:0003714; F:transcription corepressor activity; IEA:Ensembl.
+DR   GO; GO:0031625; F:ubiquitin protein ligase binding; IPI:BHF-UCL.
+DR   GO; GO:0008270; F:zinc ion binding; NAS:UniProtKB.
+DR   GO; GO:0006303; P:double-strand break repair via nonhomologous end joining; TAS:Reactome.
+DR   GO; GO:0032088; P:negative regulation of NF-kappaB transcription factor activity; IEA:Ensembl.
+DR   GO; GO:0000122; P:negative regulation of transcription by RNA polymerase II; IEA:Ensembl.
+DR   GO; GO:0045892; P:negative regulation of transcription, DNA-templated; IDA:UniProtKB.
+DR   GO; GO:0010804; P:negative regulation of tumor necrosis factor-mediated signaling pathway; IEA:Ensembl.
+DR   GO; GO:1902231; P:positive regulation of intrinsic apoptotic signaling pathway in response to DNA damage; IEA:Ensembl.
+DR   GO; GO:1902174; P:positive regulation of keratinocyte apoptotic process; ISS:BHF-UCL.
+DR   GO; GO:0033235; P:positive regulation of protein sumoylation; IDA:UniProtKB.
+DR   GO; GO:0016925; P:protein sumoylation; IDA:BHF-UCL.
+DR   GO; GO:0006351; P:transcription, DNA-templated; IEA:UniProtKB-KW.
+DR   GO; GO:0042359; P:vitamin D metabolic process; TAS:Reactome.
+DR   GO; GO:0016055; P:Wnt signaling pathway; IEA:UniProtKB-KW.
+DR   Gene3D; 1.10.720.30; -; 1.
+DR   Gene3D; 2.60.120.780; -; 1.
+DR   Gene3D; 3.30.40.10; -; 1.
+DR   InterPro; IPR027224; PIAS4.
+DR   InterPro; IPR023321; PINIT.
+DR   InterPro; IPR038654; PINIT_sf.
+DR   InterPro; IPR003034; SAP_dom.
+DR   InterPro; IPR036361; SAP_dom_sf.
+DR   InterPro; IPR004181; Znf_MIZ.
+DR   InterPro; IPR013083; Znf_RING/FYVE/PHD.
+DR   PANTHER; PTHR10782:SF9; PTHR10782:SF9; 1.
+DR   Pfam; PF14324; PINIT; 1.
+DR   Pfam; PF02891; zf-MIZ; 1.
+DR   SMART; SM00513; SAP; 1.
+DR   SUPFAM; SSF68906; SSF68906; 1.
+DR   PROSITE; PS51466; PINIT; 1.
+DR   PROSITE; PS50800; SAP; 1.
+DR   PROSITE; PS51044; ZF_SP_RING; 1.
+PE   1: Evidence at protein level;
+KW   Acetylation; Complete proteome; DNA-binding; Isopeptide bond;
+KW   Metal-binding; Nucleus; Reference proteome; Repressor; Transcription;
+KW   Transcription regulation; Transferase; Ubl conjugation;
+KW   Ubl conjugation pathway; Wnt signaling pathway; Zinc; Zinc-finger.
+FT   INIT_MET      1      1       Removed. {ECO:0000244|PubMed:19413330}.
+FT   CHAIN         2    510       E3 SUMO-protein ligase PIAS4.
+FT                                /FTId=PRO_0000218982.
+FT   DOMAIN       12     46       SAP. {ECO:0000255|PROSITE-
+FT                                ProRule:PRU00186, ECO:0000305}.
+FT   DOMAIN      119    279       PINIT. {ECO:0000255|PROSITE-
+FT                                ProRule:PRU00799}.
+FT   ZN_FING     311    388       SP-RING-type. {ECO:0000255|PROSITE-
+FT                                ProRule:PRU00452}.
+FT   MOTIF        20     24       LXXLL motif.
+FT   COMPBIAS    464    492       Asp/Glu-rich (acidic).
+FT   MOD_RES       2      2       N-acetylalanine.
+FT                                {ECO:0000244|PubMed:19413330}.
+FT   MOD_RES     114    114       N6-acetyllysine.
+FT                                {ECO:0000244|PubMed:19608861}.
+FT   CROSSLNK      9      9       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK     35     35       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO);
+FT                                alternate.
+FT   CROSSLNK     35     35       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2);
+FT                                alternate. {ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK     56     56       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK     59     59       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000244|PubMed:25218447,
+FT                                ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK     68     68       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK     69     69       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK    125    125       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000244|PubMed:28112733}.
+FT   CROSSLNK    128    128       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO).
+FT   MUTAGEN      23     24       LL->AA: Loss of repression of AR- and
+FT                                STAT1-induced transcription; no effect on
+FT                                AR- and STAT1-binding.
+FT                                {ECO:0000269|PubMed:11248056,
+FT                                ECO:0000269|PubMed:11439351}.
+FT   MUTAGEN      35     35       K->R: Complete loss of sumoylation. No
+FT                                enhancement of TCF4 sumoylation. No
+FT                                effect on interaction with TCF4.
+FT                                Colocalizes with SUMO1 in nucleus but
+FT                                concentrated into nuclear granules.
+FT                                {ECO:0000269|PubMed:12727872,
+FT                                ECO:0000269|PubMed:15831457}.
+FT   MUTAGEN     128    128       K->R: Some loss of sumoylation.
+FT                                {ECO:0000269|PubMed:12727872,
+FT                                ECO:0000269|PubMed:15831457}.
+FT   MUTAGEN     342    342       C->A: Inhibits TCF4 sumoylation. Inhibits
+FT                                beta-catenin-mediated TCF7L2/TCF4
+FT                                activity. No colocalization with
+FT                                TCF7L2/TCF4 in nuclear punctate
+FT                                structures; when associated with A-347.
+FT   MUTAGEN     347    347       C->A: Inhibits TCF4 sumoylation. Inhibits
+FT                                beta-catenin-mediated TCF7L2/TCF4
+FT                                activity. No colocalization with
+FT                                TCF7L2/TCF4 in nuclear punctate
+FT                                structures; when associated with A-342.
+FT                                AR- and STAT1-binding.
+FT   CONFLICT    178    178       N -> K (in Ref. 1). {ECO:0000305}.
+FT   CONFLICT    179    182       SREL -> FQGM (in Ref. 1 and 3).
+FT                                {ECO:0000305}.
+FT   CONFLICT    482    482       E -> G (in Ref. 2; AAH66895).
+FT                                {ECO:0000305}.
+SQ   SEQUENCE   510 AA;  56504 MW;  26AAA18246E1ACE3 CRC64;
+     MAAELVEAKN MVMSFRVSDL QMLLGFVGRS KSGLKHELVT RALQLVQFDC SPELFKKIKE
+     LYETRYAKKN SEPAPQPHRP LDPLTMHSTY DRAGAVPRTP LAGPNIDYPV LYGKYLNGLG
+     RLPAKTLKPE VRLVKLPFFN MLDELLKPTE LVPQNNEKLQ ESPCIFALTP RQVELIRNSR
+     ELQPGVKAVQ VVLRICYSDT SCPQEDQYPP NIAVKVNHSY CSVPGYYPSN KPGVEPKRPC
+     RPINLTHLMY LSSATNRITV TWGNYGKSYS VALYLVRQLT SSELLQRLKT IGVKHPELCK
+     ALVKEKLRLD PDSEIATTGV RVSLICPLVK MRLSVPCRAE TCAHLQCFDA VFYLQMNEKK
+     PTWMCPVCDK PAPYDQLIID GLLSKILSEC EDADEIEYLV DGSWCPIRAE KERSCSPQGA
+     ILVLGPSDAN GLLPAPSVNG SGALGSTGGG GPVGSMENGK PGADVVDLTL DSSSSSEDEE
+     EEEEEEEDED EEGPRPKRRC PFQKGLVPAC
+//
+ID   PIAS4_MOUSE             Reviewed;         507 AA.
+AC   Q9JM05; Q8R165;
+DT   19-SEP-2003, integrated into UniProtKB/Swiss-Prot.
+DT   01-MAR-2003, sequence version 2.
+DT   12-SEP-2018, entry version 159.
+DE   RecName: Full=E3 SUMO-protein ligase PIAS4;
+DE            EC=2.3.2.27;
+DE   AltName: Full=PIASy;
+DE   AltName: Full=Protein inhibitor of activated STAT protein 4;
+DE   AltName: Full=Protein inhibitor of activated STAT protein gamma;
+DE            Short=PIAS-gamma;
+DE   AltName: Full=RING-type E3 ubiquitin transferase PIAS4 {ECO:0000305};
+GN   Name=Pias4; Synonyms=Piasg;
+OS   Mus musculus (Mouse).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha;
+OC   Muroidea; Muridae; Murinae; Mus; Mus.
+OX   NCBI_TaxID=10090 {ECO:0000312|EMBL:AAF72040.1};
+RN   [1] {ECO:0000305}
+RP   NUCLEOTIDE SEQUENCE [MRNA], TISSUE SPECIFICITY, AND DEVELOPMENTAL
+RP   STAGE.
+RC   TISSUE=Brain;
+RX   PubMed=10854042; DOI=10.1385/JMN:14:1-2:107;
+RA   Sturm S., Koch M., White F.A.;
+RT   "Cloning and analysis of a murine Pias family member, Pias-gamma, in
+RT   developing skin and neurons.";
+RL   J. Mol. Neurosci. 14:107-121(2000).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Kidney;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [3] {ECO:0000305}
+RP   INTERACTION WITH LEF1, DNA-BINDING, SUMOYLATION, SUBCELLULAR LOCATION,
+RP   AND MUTAGENESIS OF CYS-330; CYS-335; HIS-337; CYS-340 AND
+RP   470-SER--SER-474.
+RX   PubMed=11731474; DOI=10.1101/gad.944801;
+RA   Sachdev S., Bruhn L., Sieber H., Pichler A., Melchior F.,
+RA   Grosschedl R.;
+RT   "PIASy, a nuclear matrix-associated SUMO E3 ligase, represses LEF1
+RT   activity by sequestration into nuclear bodies.";
+RL   Genes Dev. 15:3088-3103(2001).
+RN   [4]
+RP   TISSUE SPECIFICITY.
+RX   PubMed=12750312; DOI=10.1161/01.RES.0000076893.70898.36;
+RA   Chun T.-H., Itoh H., Subramanian L., Iniguez-Lluhi J.A., Nakao K.;
+RT   "Modification of GATA-2 transcriptional activity in endothelial cells
+RT   by the SUMO E3 ligase PIASy.";
+RL   Circ. Res. 92:1201-1208(2003).
+RN   [5]
+RP   SUBCELLULAR LOCATION, INTERACTION WITH TRIM32, AND UBIQUITINATION.
+RX   PubMed=16816390; DOI=10.1074/jbc.M601655200;
+RA   Albor A., El-Hizawi S., Horn E.J., Laederich M., Frosk P.,
+RA   Wrogemann K., Kulesz-Martin M.;
+RT   "The interaction of Piasy with Trim32, an E3-ubiquitin ligase mutated
+RT   in limb-girdle muscular dystrophy type 2H, promotes Piasy degradation
+RT   and regulates UVB-induced keratinocyte apoptosis through NFkappaB.";
+RL   J. Biol. Chem. 281:25850-25866(2006).
+RN   [6]
+RP   INTERACTION WITH MOMLV CA.
+RX   PubMed=16352559; DOI=10.1128/JVI.80.1.342-352.2006;
+RA   Yueh A., Leung J., Bhattacharyya S., Perrone L.A., de los Santos K.,
+RA   Pu S.-Y., Goff S.P.;
+RT   "Interaction of moloney murine leukemia virus capsid with Ubc9 and
+RT   PIASy mediates SUMO-1 addition required early in infection.";
+RL   J. Virol. 80:342-352(2006).
+RN   [7]
+RP   IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RC   TISSUE=Testis;
+RX   PubMed=21183079; DOI=10.1016/j.cell.2010.12.001;
+RA   Huttlin E.L., Jedrychowski M.P., Elias J.E., Goswami T., Rad R.,
+RA   Beausoleil S.A., Villen J., Haas W., Sowa M.E., Gygi S.P.;
+RT   "A tissue-specific atlas of mouse protein phosphorylation and
+RT   expression.";
+RL   Cell 143:1174-1189(2010).
+CC   -!- FUNCTION: Functions as an E3-type small ubiquitin-like modifier
+CC       (SUMO) ligase, stabilizing the interaction between UBE2I and the
+CC       substrate, and as a SUMO-tethering factor. Plays a crucial role as
+CC       a transcriptional coregulation in various cellular pathways,
+CC       including the STAT pathway, the p53/TP53 pathway, the Wnt pathway
+CC       and the steroid hormone signaling pathway. Involved in gene
+CC       silencing. Mediates sumoylation of CEBPA, PARK7, HERC2, MYB, TCF4
+CC       and RNF168. In Wnt signaling, represses LEF1 and enhances TCF4
+CC       transcriptional activities through promoting their sumoylations.
+CC       Enhances the sumoylation of MTA1 and may participate in its
+CC       paralog-selective sumoylation (By similarity). {ECO:0000250}.
+CC   -!- CATALYTIC ACTIVITY: S-ubiquitinyl-[E2 ubiquitin-conjugating
+CC       enzyme]-L-cysteine + [acceptor protein]-L-lysine = [E2 ubiquitin-
+CC       conjugating enzyme]-L-cysteine + N(6)-ubiquitinyl-[acceptor
+CC       protein]-L-lysine.
+CC   -!- PATHWAY: Protein modification; protein sumoylation.
+CC   -!- SUBUNIT: Interacts with AR, AXIN1, GATA2, LEF1, TP53 and STAT1,
+CC       after treatment with IFNG. Binds to AT-rich DNA sequences, known
+CC       as matrix or scaffold attachment regions (MARs/SARs) (By
+CC       similarity). Interacts with TICAM1 (By similarity). Interacts with
+CC       Moloney murine leukemia virus CA. Interacts with KLF8; the
+CC       interaction results in SUMO ligation and repression of KLF8
+CC       transcriptional activity and of its cell cycle progression into
+CC       G(1) phase. Interacts with MTA1 (By similarity). Interacts with
+CC       TRIM32 upon treatment with UVB and TNF-alpha. {ECO:0000250,
+CC       ECO:0000269|PubMed:11731474, ECO:0000269|PubMed:16352559,
+CC       ECO:0000269|PubMed:16816390}.
+CC   -!- SUBCELLULAR LOCATION: Nucleus, PML body
+CC       {ECO:0000269|PubMed:11731474, ECO:0000269|PubMed:16816390}.
+CC       Note=Colocalizes with SUMO1 and TCF7L2/TCF4 and LEF1 in a subset
+CC       of PML (promyelocytic leukemia) nuclear bodies. Accumulates in the
+CC       cytoplasm upon treatment with UVB and TNF-alpha.
+CC   -!- TISSUE SPECIFICITY: Widely expressed, with highest levels in
+CC       testis. Also expressed in vascular endothelial cells, in primary
+CC       keratinocytes and in the CNS, including cortex, olfactory bulb,
+CC       spinal cord, thalamus and trigeminal ganglion. Low expression, if
+CC       any, in liver and lung. {ECO:0000269|PubMed:10854042,
+CC       ECO:0000269|PubMed:12750312}.
+CC   -!- DEVELOPMENTAL STAGE: At 8.5 dpc, expressed primarily in the
+CC       anterior part of the neural tube. At 10.5 dpc, expressed in the
+CC       neuroepithelium of the forebrain and hindbrain. At 11.5 dpc,
+CC       detected in the neural tube, eye, limb buds and brachial arches.
+CC       At 12.5 dpc, expressed in the hindlimbs and forelimbs, as well as
+CC       in the forebrain. At 12.5 and 13.5 dpc, detected in single cells
+CC       in the marginal zone of the developing cortex, as well as in other
+CC       developing tissues and organs. At 13.5 dpc, expressed in the
+CC       developing limb buds, in single cells in the mesenchyme
+CC       surrounding future digit structures. At 15.5 dpc, detected in the
+CC       inner root sheath of vibrissa hair follicle. Expression in the
+CC       inner root sheath of the hair follicle continues later in life as
+CC       it can also be detected in the back skin of newborn at postnatal
+CC       day 3. At 16.5 dpc, expressed in the epithelium of olfactory and
+CC       in the retina. {ECO:0000269|PubMed:10854042}.
+CC   -!- DOMAIN: The LXXLL motif is a coregulator signature that is
+CC       essential for transcriptional corepression.
+CC   -!- PTM: Sumoylated. Lys-35 is the main site of sumoylation.
+CC       Sumoylation is required for TCF4 sumoylation and transcriptional
+CC       activation. Represses LEF1 transcriptional activity. SUMO1 is the
+CC       preferred conjugate. {ECO:0000269|PubMed:11731474}.
+CC   -!- PTM: Ubiquitinated by TRIM32 upon treatment with UVB and TNF-
+CC       alpha. {ECO:0000269|PubMed:16816390}.
+CC   -!- SIMILARITY: Belongs to the PIAS family. {ECO:0000305}.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF109174; AAF72040.1; -; mRNA.
+DR   EMBL; BC025159; AAH25159.1; -; mRNA.
+DR   CCDS; CCDS35992.1; -.
+DR   RefSeq; NP_067476.2; NM_021501.4.
+DR   UniGene; Mm.34428; -.
+DR   ProteinModelPortal; Q9JM05; -.
+DR   SMR; Q9JM05; -.
+DR   BioGrid; 208475; 6.
+DR   DIP; DIP-60971N; -.
+DR   IntAct; Q9JM05; 2.
+DR   STRING; 10090.ENSMUSP00000005064; -.
+DR   iPTMnet; Q9JM05; -.
+DR   PhosphoSitePlus; Q9JM05; -.
+DR   EPD; Q9JM05; -.
+DR   MaxQB; Q9JM05; -.
+DR   PaxDb; Q9JM05; -.
+DR   PRIDE; Q9JM05; -.
+DR   Ensembl; ENSMUST00000005064; ENSMUSP00000005064; ENSMUSG00000004934.
+DR   GeneID; 59004; -.
+DR   KEGG; mmu:59004; -.
+DR   UCSC; uc007ggc.3; mouse.
+DR   CTD; 51588; -.
+DR   MGI; MGI:2136940; Pias4.
+DR   eggNOG; KOG2169; Eukaryota.
+DR   eggNOG; ENOG410XQ2E; LUCA.
+DR   GeneTree; ENSGT00550000074410; -.
+DR   HOGENOM; HOG000230594; -.
+DR   HOVERGEN; HBG053598; -.
+DR   InParanoid; Q9JM05; -.
+DR   KO; K16065; -.
+DR   OMA; LRICYTD; -.
+DR   OrthoDB; EOG091G08G5; -.
+DR   PhylomeDB; Q9JM05; -.
+DR   TreeFam; TF323787; -.
+DR   Reactome; R-MMU-3108214; SUMOylation of DNA damage response and repair proteins.
+DR   Reactome; R-MMU-3232118; SUMOylation of transcription factors.
+DR   Reactome; R-MMU-3232142; SUMOylation of ubiquitinylation proteins.
+DR   Reactome; R-MMU-4085377; SUMOylation of SUMOylation proteins.
+DR   Reactome; R-MMU-4090294; SUMOylation of intracellular receptors.
+DR   Reactome; R-MMU-4615885; SUMOylation of DNA replication proteins.
+DR   Reactome; R-MMU-4755510; SUMOylation of immune response proteins.
+DR   Reactome; R-MMU-5693565; Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks.
+DR   Reactome; R-MMU-5693571; Nonhomologous End-Joining (NHEJ).
+DR   Reactome; R-MMU-69473; G2/M DNA damage checkpoint.
+DR   UniPathway; UPA00886; -.
+DR   PRO; PR:Q9JM05; -.
+DR   Proteomes; UP000000589; Chromosome 10.
+DR   Bgee; ENSMUSG00000004934; Expressed in 263 organ(s), highest expression level in bone marrow.
+DR   CleanEx; MM_PIAS4; -.
+DR   ExpressionAtlas; Q9JM05; baseline and differential.
+DR   Genevisible; Q9JM05; MM.
+DR   GO; GO:0005737; C:cytoplasm; ISO:MGI.
+DR   GO; GO:0016363; C:nuclear matrix; IDA:MGI.
+DR   GO; GO:0005654; C:nucleoplasm; IDA:MGI.
+DR   GO; GO:0005634; C:nucleus; IDA:UniProtKB.
+DR   GO; GO:0016605; C:PML body; IEA:UniProtKB-SubCell.
+DR   GO; GO:1990234; C:transferase complex; IDA:BHF-UCL.
+DR   GO; GO:0003677; F:DNA binding; IDA:MGI.
+DR   GO; GO:0008022; F:protein C-terminus binding; ISO:MGI.
+DR   GO; GO:0061665; F:SUMO ligase activity; IDA:BHF-UCL.
+DR   GO; GO:0019789; F:SUMO transferase activity; IDA:MGI.
+DR   GO; GO:0003714; F:transcription corepressor activity; IDA:MGI.
+DR   GO; GO:0031625; F:ubiquitin protein ligase binding; IPI:BHF-UCL.
+DR   GO; GO:0008270; F:zinc ion binding; NAS:UniProtKB.
+DR   GO; GO:0007259; P:JAK-STAT cascade; ISA:MGI.
+DR   GO; GO:0007275; P:multicellular organism development; NAS:UniProtKB.
+DR   GO; GO:0032088; P:negative regulation of NF-kappaB transcription factor activity; IDA:BHF-UCL.
+DR   GO; GO:0000122; P:negative regulation of transcription by RNA polymerase II; IDA:BHF-UCL.
+DR   GO; GO:0045892; P:negative regulation of transcription, DNA-templated; ISS:UniProtKB.
+DR   GO; GO:0010804; P:negative regulation of tumor necrosis factor-mediated signaling pathway; IMP:MGI.
+DR   GO; GO:1902231; P:positive regulation of intrinsic apoptotic signaling pathway in response to DNA damage; IDA:MGI.
+DR   GO; GO:1902174; P:positive regulation of keratinocyte apoptotic process; IDA:BHF-UCL.
+DR   GO; GO:0033235; P:positive regulation of protein sumoylation; ISS:UniProtKB.
+DR   GO; GO:0016925; P:protein sumoylation; IDA:BHF-UCL.
+DR   GO; GO:0006351; P:transcription, DNA-templated; IEA:UniProtKB-KW.
+DR   GO; GO:0016032; P:viral process; IEA:UniProtKB-KW.
+DR   GO; GO:0016055; P:Wnt signaling pathway; IEA:UniProtKB-KW.
+DR   Gene3D; 1.10.720.30; -; 1.
+DR   Gene3D; 2.60.120.780; -; 1.
+DR   Gene3D; 3.30.40.10; -; 1.
+DR   InterPro; IPR027224; PIAS4.
+DR   InterPro; IPR023321; PINIT.
+DR   InterPro; IPR038654; PINIT_sf.
+DR   InterPro; IPR003034; SAP_dom.
+DR   InterPro; IPR036361; SAP_dom_sf.
+DR   InterPro; IPR004181; Znf_MIZ.
+DR   InterPro; IPR013083; Znf_RING/FYVE/PHD.
+DR   PANTHER; PTHR10782:SF9; PTHR10782:SF9; 1.
+DR   Pfam; PF14324; PINIT; 1.
+DR   Pfam; PF02891; zf-MIZ; 1.
+DR   SMART; SM00513; SAP; 1.
+DR   SUPFAM; SSF68906; SSF68906; 1.
+DR   PROSITE; PS51466; PINIT; 1.
+DR   PROSITE; PS50800; SAP; 1.
+DR   PROSITE; PS51044; ZF_SP_RING; 1.
+PE   1: Evidence at protein level;
+KW   Acetylation; Complete proteome; DNA-binding; Host-virus interaction;
+KW   Isopeptide bond; Metal-binding; Nucleus; Reference proteome;
+KW   Repressor; Transcription; Transcription regulation; Transferase;
+KW   Ubl conjugation; Ubl conjugation pathway; Wnt signaling pathway; Zinc;
+KW   Zinc-finger.
+FT   INIT_MET      1      1       Removed. {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CHAIN         2    507       E3 SUMO-protein ligase PIAS4.
+FT                                /FTId=PRO_0000218983.
+FT   DOMAIN       12     46       SAP. {ECO:0000255|PROSITE-
+FT                                ProRule:PRU00186, ECO:0000305}.
+FT   DOMAIN      112    272       PINIT. {ECO:0000255|PROSITE-
+FT                                ProRule:PRU00799}.
+FT   ZN_FING     304    381       SP-RING-type. {ECO:0000255|PROSITE-
+FT                                ProRule:PRU00452}.
+FT   MOTIF        20     24       LXXLL motif.
+FT   COMPBIAS    462    488       Asp/Glu-rich (acidic).
+FT   MOD_RES       2      2       N-acetylalanine.
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   MOD_RES     107    107       N6-acetyllysine.
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK      9      9       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK     35     35       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO);
+FT                                alternate. {ECO:0000250}.
+FT   CROSSLNK     35     35       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2);
+FT                                alternate.
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK     56     56       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK     59     59       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK     68     68       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK     69     69       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK    118    118       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO2).
+FT                                {ECO:0000250|UniProtKB:Q8N2W9}.
+FT   CROSSLNK    128    128       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in SUMO).
+FT                                {ECO:0000250}.
+FT   MUTAGEN     330    330       C->S: Abrogates sumoylation of LEF1 and
+FT                                increases LEF1-mediated transcriptional
+FT                                activity; when associated with S-335; A-
+FT                                337 and S-340.
+FT                                {ECO:0000269|PubMed:11731474}.
+FT   MUTAGEN     335    335       C->S: Abrogates sumoylation of LEF1 and
+FT                                increases LEF1-mediated transcriptional
+FT                                activity; when associated with S-330; A-
+FT                                337 and S-340.
+FT                                {ECO:0000269|PubMed:11731474}.
+FT   MUTAGEN     337    337       H->A: Abrogates sumoylation of LEF1 and
+FT                                increases LEF1-mediated transcriptional
+FT                                activity; when associated with S-330; S-
+FT                                335 and S-340.
+FT                                {ECO:0000269|PubMed:11731474}.
+FT   MUTAGEN     340    340       C->S: Abrogates sumoylation of LEF1 and
+FT                                increases LEF1-mediated transcriptional
+FT                                activity; when associated with S-330; S-
+FT                                335 and A-337.
+FT                                {ECO:0000269|PubMed:11731474}.
+FT   MUTAGEN     470    474       SSSSS->AAAAA: No effect on sumoylation of
+FT                                LEF1, nor on LEF1-binding.
+FT                                {ECO:0000269|PubMed:11731474}.
+FT   CONFLICT    230    230       K -> N (in Ref. 1; AAF72040).
+FT                                {ECO:0000305}.
+FT   CONFLICT    417    417       L -> H (in Ref. 1; AAF72040).
+FT                                {ECO:0000305}.
+FT   CONFLICT    494    494       K -> N (in Ref. 1; AAF72040).
+FT                                {ECO:0000305}.
+SQ   SEQUENCE   507 AA;  55570 MW;  A8E5E6E3BAC76426 CRC64;
+     MAAELVEAKN MVMSFRVSDL QMLLGFVGRS KSGLKHELVT RALQLVQFDC SPELFKKIKE
+     LYETRYAKKS AEPGPQAPRP LDPLALHSMP RTPLSGPTVD YPVLYGKYLN GLGRLPTKTL
+     KPEVRLVKLP FFNMLDELLK PTELVPQSAE KLQESPCIFA LTPRQVEMIR NSRELQPGVK
+     AVQVVLRICY SDTSCPQEDQ YPPNIAVKVN HSYCSVPGYY PSNKPGVEPK RPCRPINLTH
+     LMYLSSATNR ITVTWGNYGK SYSVALYLVR QLTSSDLLQR LKTIGVKHPE LCKALVKEKL
+     RLDPDSEIAT TGVRVSLICP LVKMRLSVPC RAETCAHLQC FDAVFYLQMN EKKPTWMCPV
+     CDKPAAYDQL IIDGLLSKIL SECEGADEIE FLAEGSWRPI RAEKEPSCSP QGPILVLGTS
+     DANGLAPASS TPGIGSGLSG PGSAGSGAGA AGSLENGKTG ADVVDLTLDS SSSSEDEDED
+     EDDDEDEDEG PRPKRRCPFQ KGLVPAC
+//
