@@ -1,7 +1,7 @@
 import re
 
 
-class FastaParser:
+class UniProtFastaParser:
     """Generator class which reads in a UniProt fasta format file.
     Accepts filehandle as input and yields Fasta objects."""
 
@@ -33,7 +33,7 @@ class FastaParser:
                 break
 
         fields = self._parse_header(lines[0])
-        return Fasta(*fields, lines[1:])
+        return UniProtFasta(*fields, lines[1:])
 
     def __iter__(self):
         return self
@@ -76,7 +76,7 @@ class FastaParser:
         return fields
 
 
-class Fasta:
+class UniProtFasta:
     def __init__(
         self,
         reviewed=False,
@@ -111,7 +111,7 @@ class Fasta:
 
     def __repr__(self):
         """Defines a nicely-formatted string representation of the class for debugging purposes."""
-        return f"Fasta({self.accession}, {self.entry_name}, {len(self)})"
+        return f"UniProtFasta({self.accession}, {self.entry_name}, {len(self)})"
 
     def __len__(self):
         """Defines the 'length' of the class as the sequence length."""
