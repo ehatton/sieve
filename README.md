@@ -1,6 +1,12 @@
 # upfilter
 
-A little bioinformatics command line tool, for filtering and extracting UniProt FASTA sequences from a file. 
+A little bioinformatics command line tool, for filtering and extracting UniProt FASTA sequences from a file.
+
+
+## Quickstart
+
+Run the following command to view the available filtering options:
+```upfilter --help```
 
 
 ## Installation
@@ -29,6 +35,11 @@ with open("my_proteins.fasta", "r") as infile:
         print(protein.accession)
 
 ```
+
+## Requirements
+python verson 3.6 or above.
+
+May also work with earlier versions of python 3 but this has not been tested.
 
 ## Built with
 - [click](https://click.palletsprojects.com/en/7.x/)
