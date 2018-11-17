@@ -28,6 +28,29 @@ DDEEPTPGLSREVIRFLLEQTVMKDS
 """
 
 
+class TestCliCheckFormat(unittest.TestCase):
+    def setUp(self):
+        self.text_handle = open("tests/samples/pias4.txt", "r")
+        self.fasta_handle = open("tests/samples/SHLD1.fasta", "r")
+
+    def tearDown(self):
+        self.text_handle.close()
+        self.fasta_handle.close()
+
+    def test_check_fasta_filetype(self):
+        fasta_filetype = cli.check_format(self.fasta_handle)
+        self.assertEqual(fasta_filetype, "fasta")
+
+    def test_check_text_filetype(self):
+        text_filetype = cli.check_format(self.text_handle)
+        self.assertEqual(text_filetype, "text")
+
+    def test_check_file_pointer(self):
+        # Check that the file pointer has returned to the start
+        file_pointer = self.text_handle.tell()
+        self.assertEqual(file_pointer, 0)
+
+
 class TestCliFilter(unittest.TestCase):
     """Tests for the command-line interface module."""
 

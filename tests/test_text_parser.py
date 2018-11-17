@@ -38,3 +38,15 @@ class TestTextParser(TestCase):
         # Check that sequence lines are not accumulated in subsequent entries
         self.assertEqual(len(self.fastalist[1]), 507)
 
+
+class TestTextParserTrEMBL(TestCase):
+    def setUp(self):
+        with open("tests/samples/A0A0S2Z4N5.txt", "r") as infile:
+            self.fastalist = list(text_parser(infile))
+
+    def test_name(self):
+        # Check that an entry with multiple SubNames returns only the first one
+        self.assertEqual(self.fastalist[0].name, "Tumor protein p63 isoform 1")
+
+    def test_fragment(self):
+        self.assertTrue(self.fastalist[0].fragment)

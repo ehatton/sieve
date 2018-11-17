@@ -1,0 +1,204 @@
+ID   A0A0S2Z4N5_HUMAN        Unreviewed;       680 AA.
+AC   A0A0S2Z4N5;
+DT   17-FEB-2016, integrated into UniProtKB/TrEMBL.
+DT   17-FEB-2016, sequence version 1.
+DT   07-NOV-2018, entry version 27.
+DE   SubName: Full=Tumor protein p63 isoform 1 {ECO:0000313|EMBL:ALQ33893.1};
+DE   SubName: Full=Tumor protein p73-like, isoform CRA_a {ECO:0000313|EMBL:EAW78112.1};
+DE   Flags: Fragment;
+GN   Name=TP63 {ECO:0000313|EMBL:ALQ33893.1};
+GN   Synonyms=TP73L {ECO:0000313|EMBL:EAW78112.1};
+GN   ORFNames=hCG_16028 {ECO:0000313|EMBL:EAW78112.1};
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606 {ECO:0000313|EMBL:ALQ33893.1};
+RN   [1] {ECO:0000313|EMBL:EAW78112.1}
+RP   NUCLEOTIDE SEQUENCE.
+RX   PubMed=11181995; DOI=10.1126/science.1058040;
+RA   Venter J.C., Adams M.D., Myers E.W., Li P.W., Mural R.J., Sutton G.G.,
+RA   Smith H.O., Yandell M., Evans C.A., Holt R.A., Gocayne J.D.,
+RA   Amanatides P., Ballew R.M., Huson D.H., Wortman J.R., Zhang Q.,
+RA   Kodira C.D., Zheng X.H., Chen L., Skupski M., Subramanian G.,
+RA   Thomas P.D., Zhang J., Gabor Miklos G.L., Nelson C., Broder S.,
+RA   Clark A.G., Nadeau J., McKusick V.A., Zinder N., Levine A.J.,
+RA   Roberts R.J., Simon M., Slayman C., Hunkapiller M., Bolanos R.,
+RA   Delcher A., Dew I., Fasulo D., Flanigan M., Florea L., Halpern A.,
+RA   Hannenhalli S., Kravitz S., Levy S., Mobarry C., Reinert K.,
+RA   Remington K., Abu-Threideh J., Beasley E., Biddick K., Bonazzi V.,
+RA   Brandon R., Cargill M., Chandramouliswaran I., Charlab R.,
+RA   Chaturvedi K., Deng Z., Di Francesco V., Dunn P., Eilbeck K.,
+RA   Evangelista C., Gabrielian A.E., Gan W., Ge W., Gong F., Gu Z.,
+RA   Guan P., Heiman T.J., Higgins M.E., Ji R.R., Ke Z., Ketchum K.A.,
+RA   Lai Z., Lei Y., Li Z., Li J., Liang Y., Lin X., Lu F., Merkulov G.V.,
+RA   Milshina N., Moore H.M., Naik A.K., Narayan V.A., Neelam B.,
+RA   Nusskern D., Rusch D.B., Salzberg S., Shao W., Shue B., Sun J.,
+RA   Wang Z., Wang A., Wang X., Wang J., Wei M., Wides R., Xiao C., Yan C.,
+RA   Yao A., Ye J., Zhan M., Zhang W., Zhang H., Zhao Q., Zheng L.,
+RA   Zhong F., Zhong W., Zhu S., Zhao S., Gilbert D., Baumhueter S.,
+RA   Spier G., Carter C., Cravchik A., Woodage T., Ali F., An H., Awe A.,
+RA   Baldwin D., Baden H., Barnstead M., Barrow I., Beeson K., Busam D.,
+RA   Carver A., Center A., Cheng M.L., Curry L., Danaher S., Davenport L.,
+RA   Desilets R., Dietz S., Dodson K., Doup L., Ferriera S., Garg N.,
+RA   Gluecksmann A., Hart B., Haynes J., Haynes C., Heiner C., Hladun S.,
+RA   Hostin D., Houck J., Howland T., Ibegwam C., Johnson J., Kalush F.,
+RA   Kline L., Koduru S., Love A., Mann F., May D., McCawley S.,
+RA   McIntosh T., McMullen I., Moy M., Moy L., Murphy B., Nelson K.,
+RA   Pfannkoch C., Pratts E., Puri V., Qureshi H., Reardon M.,
+RA   Rodriguez R., Rogers Y.H., Romblad D., Ruhfel B., Scott R., Sitter C.,
+RA   Smallwood M., Stewart E., Strong R., Suh E., Thomas R., Tint N.N.,
+RA   Tse S., Vech C., Wang G., Wetter J., Williams S., Williams M.,
+RA   Windsor S., Winn-Deen E., Wolfe K., Zaveri J., Zaveri K., Abril J.F.,
+RA   Guigo R., Campbell M.J., Sjolander K.V., Karlak B., Kejariwal A.,
+RA   Mi H., Lazareva B., Hatton T., Narechania A., Diemer K.,
+RA   Muruganujan A., Guo N., Sato S., Bafna V., Istrail S., Lippert R.,
+RA   Schwartz R., Walenz B., Yooseph S., Allen D., Basu A., Baxendale J.,
+RA   Blick L., Caminha M., Carnes-Stine J., Caulk P., Chiang Y.H.,
+RA   Coyne M., Dahlke C., Mays A., Dombroski M., Donnelly M., Ely D.,
+RA   Esparham S., Fosler C., Gire H., Glanowski S., Glasser K., Glodek A.,
+RA   Gorokhov M., Graham K., Gropman B., Harris M., Heil J., Henderson S.,
+RA   Hoover J., Jennings D., Jordan C., Jordan J., Kasha J., Kagan L.,
+RA   Kraft C., Levitsky A., Lewis M., Liu X., Lopez J., Ma D., Majoros W.,
+RA   McDaniel J., Murphy S., Newman M., Nguyen T., Nguyen N., Nodell M.,
+RA   Pan S., Peck J., Peterson M., Rowe W., Sanders R., Scott J.,
+RA   Simpson M., Smith T., Sprague A., Stockwell T., Turner R., Venter E.,
+RA   Wang M., Wen M., Wu D., Wu M., Xia A., Zandieh A., Zhu X.;
+RT   "The sequence of the human genome.";
+RL   Science 291:1304-1351(2001).
+RN   [2] {ECO:0000313|EMBL:EAW78112.1}
+RP   NUCLEOTIDE SEQUENCE.
+RA   Mural R.J., Istrail S., Sutton G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (SEP-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [3] {ECO:0000313|EMBL:ALQ33893.1}
+RP   NUCLEOTIDE SEQUENCE.
+RX   PubMed=26871637; DOI=10.1016/j.cell.2016.01.029;
+RA   Yang X., Coulombe-Huntington J., Kang S., Sheynkman G.M., Hao T.,
+RA   Richardson A., Sun S., Yang F., Shen Y.A., Murray R., Spirohn K.,
+RA   Begg B.E., Duran-Frigola M., MacWilliams A., Pevzner S.J., Zhong Q.,
+RA   Trigg S.A., Tam S., Ghamsari L., Sahni N., Yi S., Rodriguez M.D.,
+RA   Balcha D., Tan G., Costanzo M., Andrews B., Boone C., Zhou X.J.,
+RA   Salehi-Ashtiani K., Charloteaux B., Chen A., Calderwood M.A., Aloy P.,
+RA   Roth F.P., Hill D.E., Iakoucheva L.M., Xia Y., Vidal M.;
+RT   "Widespread Expansion of Protein Interaction Capabilities by
+RT   Alternative Splicing.";
+RL   Cell 164:805-817(2016).
+CC   -!- SIMILARITY: Belongs to the p53 family.
+CC       {ECO:0000256|RuleBase:RU003401}.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   -----------------------------------------------------------------------
+DR   EMBL; KU178435; ALQ33893.1; -; mRNA.
+DR   EMBL; CH471052; EAW78112.1; -; Genomic_DNA.
+DR   RefSeq; NP_003713.3; NM_003722.4.
+DR   UniGene; Hs.137569; -.
+DR   GeneID; 8626; -.
+DR   KEGG; hsa:8626; -.
+DR   CTD; 8626; -.
+DR   KO; K10149; -.
+DR   OMA; SKMNSMN; -.
+DR   ChiTaRS; TP63; human.
+DR   GO; GO:0005829; C:cytosol; IDA:HPA.
+DR   GO; GO:0030425; C:dendrite; IEA:Ensembl.
+DR   GO; GO:0005794; C:Golgi apparatus; IDA:HPA.
+DR   GO; GO:0005654; C:nucleoplasm; IDA:HPA.
+DR   GO; GO:0032991; C:protein-containing complex; IEA:Ensembl.
+DR   GO; GO:0005791; C:rough endoplasmic reticulum; IEA:Ensembl.
+DR   GO; GO:0003682; F:chromatin binding; IEA:Ensembl.
+DR   GO; GO:0003684; F:damaged DNA binding; IEA:Ensembl.
+DR   GO; GO:0003690; F:double-stranded DNA binding; IEA:Ensembl.
+DR   GO; GO:0042802; F:identical protein binding; IEA:Ensembl.
+DR   GO; GO:0019904; F:protein domain specific binding; IEA:Ensembl.
+DR   GO; GO:0001077; F:proximal promoter DNA-binding transcription activator activity, RNA polymerase II-specific; IEA:Ensembl.
+DR   GO; GO:0043565; F:sequence-specific DNA binding; IEA:Ensembl.
+DR   GO; GO:0044212; F:transcription regulatory region DNA binding; IEA:InterPro.
+DR   GO; GO:0008283; P:cell proliferation; IEA:Ensembl.
+DR   GO; GO:0006338; P:chromatin remodeling; IEA:Ensembl.
+DR   GO; GO:0060197; P:cloacal septation; IEA:Ensembl.
+DR   GO; GO:1904888; P:cranial skeletal system development; IEA:Ensembl.
+DR   GO; GO:0007499; P:ectoderm and mesoderm interaction; IEA:Ensembl.
+DR   GO; GO:0035115; P:embryonic forelimb morphogenesis; IEA:Ensembl.
+DR   GO; GO:0035116; P:embryonic hindlimb morphogenesis; IEA:Ensembl.
+DR   GO; GO:0010481; P:epidermal cell division; IEA:Ensembl.
+DR   GO; GO:0002064; P:epithelial cell development; IEA:Ensembl.
+DR   GO; GO:0001736; P:establishment of planar polarity; IEA:Ensembl.
+DR   GO; GO:0061436; P:establishment of skin barrier; IEA:Ensembl.
+DR   GO; GO:0048807; P:female genitalia morphogenesis; IEA:Ensembl.
+DR   GO; GO:0031069; P:hair follicle morphogenesis; IEA:Ensembl.
+DR   GO; GO:0042771; P:intrinsic apoptotic signaling pathway in response to DNA damage by p53 class mediator; IEA:Ensembl.
+DR   GO; GO:0030216; P:keratinocyte differentiation; IEA:Ensembl.
+DR   GO; GO:0010259; P:multicellular organism aging; IEA:Ensembl.
+DR   GO; GO:0033147; P:negative regulation of intracellular estrogen receptor signaling pathway; IEA:Ensembl.
+DR   GO; GO:0045617; P:negative regulation of keratinocyte differentiation; IEA:Ensembl.
+DR   GO; GO:2000381; P:negative regulation of mesoderm development; IEA:Ensembl.
+DR   GO; GO:0000122; P:negative regulation of transcription by RNA polymerase II; IEA:Ensembl.
+DR   GO; GO:0051402; P:neuron apoptotic process; IEA:Ensembl.
+DR   GO; GO:0042475; P:odontogenesis of dentin-containing tooth; IEA:Ensembl.
+DR   GO; GO:0030859; P:polarized epithelial cell differentiation; IEA:Ensembl.
+DR   GO; GO:2001235; P:positive regulation of apoptotic signaling pathway; IEA:Ensembl.
+DR   GO; GO:0010838; P:positive regulation of keratinocyte proliferation; IEA:Ensembl.
+DR   GO; GO:0045747; P:positive regulation of Notch signaling pathway; IEA:Ensembl.
+DR   GO; GO:1904674; P:positive regulation of somatic stem cell population maintenance; IEA:Ensembl.
+DR   GO; GO:0036342; P:post-anal tail morphogenesis; IEA:Ensembl.
+DR   GO; GO:0060513; P:prostatic bud formation; IEA:Ensembl.
+DR   GO; GO:0051262; P:protein tetramerization; IEA:InterPro.
+DR   GO; GO:0009954; P:proximal/distal pattern formation; IEA:Ensembl.
+DR   GO; GO:0043281; P:regulation of cysteine-type endopeptidase activity involved in apoptotic process; IEA:Ensembl.
+DR   GO; GO:0010482; P:regulation of epidermal cell division; IEA:Ensembl.
+DR   GO; GO:0001302; P:replicative cell aging; IEA:Ensembl.
+DR   GO; GO:0001501; P:skeletal system development; IEA:Ensembl.
+DR   GO; GO:0043589; P:skin morphogenesis; IEA:Ensembl.
+DR   GO; GO:0007283; P:spermatogenesis; IEA:Ensembl.
+DR   GO; GO:0060529; P:squamous basal epithelial stem cell differentiation involved in prostate gland acinus development; IEA:Ensembl.
+DR   GO; GO:0048485; P:sympathetic nervous system development; IEA:Ensembl.
+DR   CDD; cd08367; P53; 1.
+DR   CDD; cd09572; SAM_tumor-p63; 1.
+DR   Gene3D; 2.60.40.720; -; 1.
+DR   Gene3D; 4.10.170.10; -; 1.
+DR   InterPro; IPR008967; p53-like_TF_DNA-bd.
+DR   InterPro; IPR012346; p53/RUNT-type_TF_DNA-bd_sf.
+DR   InterPro; IPR011615; p53_DNA-bd.
+DR   InterPro; IPR036674; p53_tetramer_sf.
+DR   InterPro; IPR010991; p53_tetrameristn.
+DR   InterPro; IPR002117; p53_tumour_suppressor.
+DR   InterPro; IPR001660; SAM.
+DR   InterPro; IPR013761; SAM/pointed_sf.
+DR   InterPro; IPR032645; Tp63.
+DR   InterPro; IPR037611; Tumor-p63_SAM.
+DR   PANTHER; PTHR11447; PTHR11447; 1.
+DR   PANTHER; PTHR11447:SF8; PTHR11447:SF8; 1.
+DR   Pfam; PF00870; P53; 1.
+DR   Pfam; PF07710; P53_tetramer; 1.
+DR   Pfam; PF07647; SAM_2; 1.
+DR   PRINTS; PR00386; P53SUPPRESSR.
+DR   SMART; SM00454; SAM; 1.
+DR   SUPFAM; SSF47719; SSF47719; 1.
+DR   SUPFAM; SSF47769; SSF47769; 1.
+DR   SUPFAM; SSF49417; SSF49417; 1.
+DR   PROSITE; PS00348; P53; 1.
+PE   2: Evidence at transcript level;
+KW   Nucleus {ECO:0000256|RuleBase:RU003401}.
+FT   DOMAIN      541    607       SAM. {ECO:0000259|SMART:SM00454}.
+FT   NON_TER     680    680       {ECO:0000313|EMBL:ALQ33893.1}.
+SQ   SEQUENCE   680 AA;  76785 MW;  F66ECD45E87D9799 CRC64;
+     MNFETSRCAT LQYCPDPYIQ RFVETPAHFS WKESYYRSTM SQSTQTNEFL SPEVFQHIWD
+     FLEQPICSVQ PIDLNFVDEP SEDGATNKIE ISMDCIRMQD SDLSDPMWPQ YTNLGLLNSM
+     DQQIQNGSSS TSPYNTDHAQ NSVTAPSPYA QPSSTFDALS PSPAIPSNTD YPGPHSFDVS
+     FQQSSTAKSA TWTYSTELKK LYCQIAKTCP IQIKVMTPPP QGAVIRAMPV YKKAEHVTEV
+     VKRCPNHELS REFNEGQIAP PSHLIRVEGN SHAQYVEDPI TGRQSVLVPY EPPQVGTEFT
+     TVLYNFMCNS SCVGGMNRRP ILIIVTLETR DGQVLGRRCF EARICACPGR DRKADEDSIR
+     KQQVSDSTKN GDGTKRPFRQ NTHGIQMTSI KKRRSPDDEL LYLPVRGRET YEMLLKIKES
+     LELMQYLPQH TIETYRQQQQ QQHQHLLQKQ TSIQSPSSYG NSSPPLNKMN SMNKLPSVSQ
+     LINPQQRNAL TPTTIPDGMG ANIPMMGTHM PMAGDMNGLS PTQALPPPLS MPSTSHCTPP
+     PPYPTDCSIV SFLARLGCSS CLDYFTTQGL TTIYQIEHYS MDDLASLKIP EQFRHAIWKG
+     ILDHRQLHEF SSPSHLLRTP SSASTVSVGS SETRGERVID AVRFTLRQTI SFPPRDEWND
+     FNFDMDARRN KQQRIKEEGE
+//

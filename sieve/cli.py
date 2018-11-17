@@ -1,5 +1,5 @@
 import click
-from sieve import FastaParser
+from sieve import FastaParser, text_parser
 
 
 # Define help strings for the various options
@@ -14,6 +14,32 @@ GENE_HELP = 'Filter by gene name. Names are case sensitive. You can have multipl
  "-g Shld1 -g SHLD1".'
 EVIDENCE_HELP = 'Filter by protein evidence level. You can have multiple evidence levels e.g. \
 "-e 1 -e 2 -e 3" to select evidence levels 1-3.'
+
+
+def check_format(infile):
+    """Accepts a filehandle as input. 
+    
+    Reads the first line of the file and checks to see if it looks like a
+    UniProt fasta file or a UniProt text file.
+
+    Returns the string 'fasta' or 'text' depending of the file format detected.
+
+    Raises ValueError if no valid file format is detected."""
+
+    filetype = None
+    # Check the first line of the file
+    line = infile.readline()
+    if line.startswith((">sp", ">tr")):
+        filetype = "fasta"
+    elif line.startswith("ID   "):
+        filetype = "text"
+    else:
+        raise ValueError(
+            "sieve requires either a UniProt fasta file or UniProt text file as input."
+        )
+    # Return file pointer to start of file
+    infile.seek(0)
+    return filetype
 
 
 def filter_all(
@@ -66,8 +92,9 @@ def filter_all(
     help=EVIDENCE_HELP,
 )
 def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evidence):
-    """Reads in a file containing UniProt fasta sequences. Filters the sequences 
-    depending on selected options.
+    """Reads in a file containing UniProt fasta sequences. Also accepts UniProt
+    text format files as input. Filters the sequences depending on selected
+    options. Outputs fasta sequences (regardless of input format).
     
     Required positional arguments are INFILE and OUTFILE, which should point
     to valid filenames. To use stdin and/or stdout instead, pass \"-\" as the
@@ -76,8 +103,15 @@ def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evid
     # Convert evidence list to int, since click only allows string types for click.Choice type
     evidence = tuple(int(x) for x in evidence)
 
+    # Check whether the file is valid fasta or text format
+    filetype = check_format(infile)
+
     # Generate, filter, and output the fasta list
-    fasta_list = FastaParser(infile)
+    if filetype == "fasta":
+        fasta_list = FastaParser(infile)
+    elif filetype == "text":
+        fasta_list = text_parser(infile)
+
     filtered_fasta = filter_all(
         fasta_list, reviewed, accession, minlen, maxlen, taxid, gene, evidence
     )

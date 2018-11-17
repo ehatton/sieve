@@ -2,10 +2,15 @@ from sieve import Fasta
 
 
 def text_parser(filehandle):
+    """Generator function which accepts a filehandle as input. The filehandle
+    should point to a file in UniProt text format.
+
+    Yields Fasta objects."""
+
     for line in filehandle:
         key = line[:2]
         if key == "ID":
-            fasta = Fasta(sequence_lines=[]) # reset sequence lines!
+            fasta = Fasta(sequence_lines=[])  # reset sequence lines!
             tokens = line.split()
             fasta.entry_name = tokens[1]
             fasta.reviewed = True if tokens[2] == "Reviewed;" else False
@@ -13,11 +18,11 @@ def text_parser(filehandle):
             if fasta.accession is None:
                 accessions = line[5:].rstrip(";\n").split("; ")
                 fasta.accession = accessions[0]
-        elif key == 'DT':
-            if 'sequence version' in line:
-                tokens = line[5:].strip('.\n').split()
+        elif key == "DT":
+            if "sequence version" in line:
+                tokens = line[5:].strip(".\n").split()
                 fasta.version = int(tokens[3])
-        elif key == 'DE':
+        elif key == "DE":
             if "RecName" in line:
                 fasta.name = _extract_name(line)
             # Get the first SubName if no RecName found
@@ -42,7 +47,7 @@ def text_parser(filehandle):
                 # Remove evidence tag if present
                 taxid_tokens = tokens[0][11:].split(" {")
                 fasta.taxid = taxid_tokens[0]
-        elif key == 'PE':
+        elif key == "PE":
             fasta.evidence = int(line[5])
         elif key == "  ":
             sequence_line = line.strip().replace(" ", "")
@@ -52,6 +57,8 @@ def text_parser(filehandle):
 
 
 def _extract_name(line):
-    tokens = line[19:-2].split(' {')
+    """Accepts a UniProt DE line (string) as input. Returns the name with
+    evidence tags removed."""
+    tokens = line[19:-2].split(" {")
     name = tokens[0]
     return name
