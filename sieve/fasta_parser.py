@@ -75,4 +75,3 @@ class FastaParser:
             fragment,
         )
         return fields
-

@@ -1,7 +1,8 @@
 # sieve
 
-A little bioinformatics command line tool, for filtering and extracting UniProt FASTA sequences from a file.
+A little bioinformatics command line tool, for filtering and extracting [UniProt](https://www.uniprot.org) FASTA sequences from a file.
 
+For more information about the UniProt FASTA format, take a look at the official [UniProt guide.](https://www.uniprot.org/help/fasta-headers)
 
 ## Quickstart
 
@@ -9,7 +10,6 @@ Run the following command to view all the available filtering options:
 ```bash
 sieve --help
 ```
-
 
 ## Installation
 
@@ -71,6 +71,7 @@ May also work with earlier versions of python 3 but this has not been tested.
 
 ## Built with
 - [click](https://click.palletsprojects.com/en/7.x/)
+- [flit](https://github.com/takluyver/flit)
 
 ## Development setup
 
@@ -84,7 +85,6 @@ python -m unittest discover
 
 * 0.0.0
     * First release
-
 
 ## Author
 
