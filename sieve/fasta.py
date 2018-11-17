@@ -1,5 +1,6 @@
-
 class Fasta:
+    """Class to represent a UniProt fasta object."""
+
     def __init__(
         self,
         reviewed=False,
@@ -42,7 +43,7 @@ class Fasta:
 
     def header(self):
         """Returns a fasta header string based on the class attributes.
-        The header format is in the UniProtKB style."""
+        The header format is in the UniProt style."""
         status = "sp" if self.reviewed else "tr"
         if self.fragment:
             name = self.name + " (Fragment)"

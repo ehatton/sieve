@@ -5,8 +5,10 @@ A little bioinformatics command line tool, for filtering and extracting UniProt 
 
 ## Quickstart
 
-Run the following command to view the available filtering options:
-```sieve --help```
+Run the following command to view all the available filtering options:
+```bash
+sieve --help
+```
 
 
 ## Installation
@@ -18,21 +20,47 @@ pip install upfilter-0.0.0-py3-none-any.whl
 ```
 
 ## Usage examples
-Filter for sequences  
+Filter for human sequences (taxonomy id 9606):
 
-Get help
+```bash
+sieve uniprot.fasta out.fasta -t 9606
+```
+
+Filter for human sequences with a maximum length of 100:
+
+```bash
+sieve uniprot.fasta out.fasta -t 9606 -max 100
+```
+
+Filter for human sequences with a length between 50 and 100:
+
+```bash
+sieve uniprot.fasta out.fasta -t 9606 -min 50 -max 100
+```
+
+Filter for sequences with gene name BRCA1 or BRCA1, reading from stdin and writing to stdout:
+```bash
+sieve - - -g BRCA1 -g BRCA2 < uniprot.fasta > out.fasta
+```
+
+Convert UniProt text format (flatfile) to FASTA format:
+```bash
+sieve uniprot.txt uniprot.fasta
+```
+
+Get help:
 ```bash
 sieve --help
 ```
 
-The FastaParser class can also be imported for use in your own python scripts.
+The FastaParser class (for UniProt FASTA files) or text_parser function (for UniProt text files) can also be used in your own python scripts:
 
 ```python
 from sieve import FastaParser
 
 with open("my_proteins.fasta", "r") as infile:
     for protein in FastaParser(infile):
-        print(protein.accession)
+        print(protein) # or do your custom filtering here
 
 ```
 
