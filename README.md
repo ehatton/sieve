@@ -1,4 +1,4 @@
-# upfilter
+# sieve
 
 A little bioinformatics command line tool, for filtering and extracting UniProt FASTA sequences from a file.
 
@@ -6,7 +6,7 @@ A little bioinformatics command line tool, for filtering and extracting UniProt 
 ## Quickstart
 
 Run the following command to view the available filtering options:
-```upfilter --help```
+```sieve --help```
 
 
 ## Installation
@@ -22,13 +22,13 @@ Filter for sequences
 
 Get help
 ```bash
-upfilter --help
+sieve --help
 ```
 
 The FastaParser class can also be imported for use in your own python scripts.
 
 ```python
-from upfilter import FastaParser
+from sieve import FastaParser
 
 with open("my_proteins.fasta", "r") as infile:
     for protein in FastaParser(infile):

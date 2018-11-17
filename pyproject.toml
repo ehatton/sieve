@@ -3,7 +3,7 @@ requires = ["flit"]
 build-backend = "flit.buildapi"
 
 [tool.flit.metadata]
-module = "upfilter"
+module = "sieve"
 author = "Emma Hatton-Ellis"
 author-email = "ehattonellis@gmail.com"
 classifiers = [
@@ -16,4 +16,4 @@ requires = ["click >=7.0"]
 requires-python = ">=3.6"
 
 [tool.flit.scripts]
-upfilter = "upfilter.cli:main"
+sieve = "sieve.cli:main"
