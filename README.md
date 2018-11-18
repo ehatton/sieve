@@ -71,7 +71,6 @@ May also work with earlier versions of python 3 but this has not been tested.
 
 ## Built with
 - [click](https://click.palletsprojects.com/en/7.x/)
-- [flit](https://github.com/takluyver/flit)
 
 ## Development setup
 
