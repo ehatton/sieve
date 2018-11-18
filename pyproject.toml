@@ -14,7 +14,6 @@ classifiers = [
     ]
 requires = ["click >=7.0"]
 requires-python = ">=3.6"
-dist-name = "uniprot-sieve"
 
 [tool.flit.scripts]
 sieve = "sieve.cli:main"
