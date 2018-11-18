@@ -73,7 +73,7 @@ with open("my_proteins.fasta", "r") as infile:
 ```
 
 ## Requirements
-python verson 3.6 or above.
+python version 3.6 or above.
 
 May also work with earlier versions of python 3 but this has not been tested.
 
