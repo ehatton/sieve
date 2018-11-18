@@ -16,7 +16,7 @@ sieve --help
 Download the latest wheel file from the releases tab and then install with the following pip command:
 
 ```bash
-pip install upfilter-0.0.0-py3-none-any.whl 
+pip install upfilter-1.0.0-py3-none-any.whl 
 ```
 
 ## Usage examples
