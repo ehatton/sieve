@@ -13,7 +13,15 @@ sieve --help
 
 ## Installation
 
-Download the latest wheel file from the releases tab and then install with the following pip command:
+- Using conda (recommended)
+
+```bash
+conda install -c ehatton sieve
+```
+
+- Using pip
+
+    Download the latest wheel file from the releases section and then install with the following pip command:
 
 ```bash
 pip install sieve-1.0.0-py3-none-any.whl 
