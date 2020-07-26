@@ -7,6 +7,7 @@ For more information about the UniProt FASTA format, take a look at the official
 ## Quickstart
 
 Run the following command to view all the available filtering options:
+
 ```bash
 sieve --help
 ```
@@ -28,6 +29,7 @@ pip install sieve-1.0.0-py3-none-any.whl
 ```
 
 ## Usage examples
+
 Filter for human sequences (taxonomy id 9606):
 
 ```bash
@@ -47,16 +49,19 @@ sieve uniprot.fasta out.fasta -t 9606 -min 50 -max 100
 ```
 
 Filter for sequences with gene name BRCA1 or BRCA1, reading from stdin and writing to stdout:
+
 ```bash
 sieve - - -g BRCA1 -g BRCA2 < uniprot.fasta > out.fasta
 ```
 
 Convert UniProt text format (flatfile) to FASTA format:
+
 ```bash
 sieve uniprot.txt uniprot.fasta
 ```
 
 Get help:
+
 ```bash
 sieve --help
 ```
@@ -69,15 +74,16 @@ from sieve import FastaParser
 with open("my_proteins.fasta", "r") as infile:
     for protein in FastaParser(infile):
         print(protein) # or do your custom filtering here
-
 ```
 
 ## Requirements
+
 python version 3.6 or above.
 
 May also work with earlier versions of python 3 but this has not been tested.
 
 ## Built with
+
 - [click](https://click.palletsprojects.com/en/7.x/)
 
 ## Development setup
@@ -90,8 +96,8 @@ python -m unittest discover
 
 ## Release History
 
-* 1.0.0
-    * First release
+- 1.0.0
+  - First release
 
 ## Author
 
