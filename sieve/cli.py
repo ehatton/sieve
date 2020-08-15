@@ -1,5 +1,5 @@
 import click
-from sieve import FastaParser, text_parser
+from sieve import parse_fasta, parse_text
 
 
 # Define help strings for the various options
@@ -107,7 +107,7 @@ def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evid
         # Check whether the file is valid fasta or text format
         filetype = check_format(infile)
         # Generate, filter, and output the fasta list
-        fasta_list = FastaParser(infile) if filetype == "fasta" else text_parser(infile)
+        fasta_list = parse_fasta(infile) if filetype == "fasta" else parse_text(infile)
     except ValueError as err:
         raise click.UsageError(str(err))
 

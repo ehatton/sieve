@@ -1,77 +1,81 @@
 import re
+from typing import Dict, Iterator, TextIO
 from sieve import Fasta
 
 
-class FastaParser:
-    """Generator class which reads in a UniProt fasta format file.
-    Accepts filehandle as input and yields Fasta objects."""
+def parse_fasta(filehandle: TextIO) -> Iterator[Fasta]:
+    """[summary]
 
-    def __init__(self, filehandle):
-        self.filehandle = filehandle
-        self.line = next(self.filehandle)
-        # A simple test to check that the file looks like UniProt fasta format
-        if not self.line.startswith((">sp", ">tr")):
-            raise ValueError(
-                "Invalid file format. This parser requires a UniProt fasta format file."
-            )
+    Args:
+        filehandle ([type]): [description]
 
-    def __next__(self):
-        # Initialize lines with fasta header
-        lines = [self.line]
+    Yields:
+        Fasta: UniProt Fasta objects
+    """
 
-        # Get the next line...this should always be the first sequence line
-        # If we have reached end of file, this raises StopIteration
-        self.line = next(self.filehandle)
-
-        # Get rest of sequence lines and collect in lines list
-        while not self.line.startswith(">"):
-            lines.append(self.line)
-            try:
-                self.line = next(self.filehandle)
-            # When the last line is reached we need to return the lines list
-            # StopIteration is handled in line 13 above, in the next call to the iterator
-            except StopIteration:
-                break
-
-        fields = self._parse_header(lines[0])
-        return Fasta(*fields, lines[1:])
-
-    def __iter__(self):
-        return self
-
-    @staticmethod
-    def _parse_header(line):
-        """Reads a UniProt format fasta header line and parses out all the different fields."""
-
-        # A hideous regex for parsing the header line
-        # Note that the gene name is optional so there is a nested capture group for this
-        header_re = re.compile(
-            r"^>(sp|tr)\|(\w{6,10})\|(\w{,10}_\w{,5})\s(.+)\sOS=(.+)\sOX=(\d+)\s(GN=(.+)\s)*PE=(\d)\sSV=(\d+)$"
-        )
-        captures = re.match(header_re, line).groups()
-
-        # Convert the first capture into a boolean
-        reviewed = True if captures[0] == "sp" else False
-
-        # Check for fragment flag in name and remove
-        name = captures[3]
-        if name.endswith(" (Fragment)"):
-            fragment = True
-            name = name.strip(" (Fragment)")
+    header = next(filehandle)
+    sequence_lines = []
+    for line in filehandle:
+        if line.startswith(">"):
+            header_fields = _parse_header(header)
+            yield Fasta(**header_fields, sequence_lines=sequence_lines)
+            header = line
+            sequence_lines = []
         else:
-            fragment = False
+            sequence_lines.append(line)
 
-        evidence = int(captures[8])
-        version = int(captures[9])
 
-        fields = (
-            reviewed,
-            *captures[1:3],
-            name,
-            *captures[4:6],
-            captures[7],
-            evidence,
-            version,
-            fragment,
-        )
-        return fields
+def _parse_header(header: str) -> Dict:
+    """Reads a UniProt format fasta header line and parses out all the different fields.
+
+    Args:
+        header: UniProt fasta header line in string format
+
+    Returns:
+        Dict: dictionary of header fields
+    """
+
+    # Note that the gene name is optional so there is a nested capture group for this
+    header_re = re.compile(
+        r">(?P<reviewed>sp|tr)\|(?P<accession>\w{6,10})\|(?P<entry_name>\w{,10}_\w{,5})\s(?P<name>.+)\sOS=(?P<species>.+)\sOX=(?P<taxid>\d+)\s(GN=(?P<gene>.+)\s)*PE=(?P<evidence>\d)\sSV=(?P<version>\d+)$"
+    )
+    raw_fields = re.match(header_re, header).groupdict()
+    header_fields = _convert_fields(raw_fields)
+    return header_fields
+
+
+def _convert_fields(fields: Dict[str]) -> Dict:
+    """Helper function which converts a dictionary of header fields (as strings)
+     into a version which can be used by the Fasta object init function.
+
+    The suffix "(Fragment)" is removed from the name, if necessary, and the
+    field "Fragment" is added to the dict.
+
+    The field "reviewed" is converted from the string "sp" or "tr" to a boolean.
+
+    The fields "evidence" and "version" are converted to int.
+
+    Args:
+        fields (Dict[str]): a dictionary of fasta header fields as strings
+
+    Returns:
+        Dict: a dictionary of header fields which can be passed to the Fasta
+        object init function.
+    """
+    header_fields = fields.copy()
+
+    # Add fragment field and strip "Fragment" from name if necessary
+    if fields["name"].endswith(" (Fragment)"):
+        header_fields["fragment"] = True
+        header_fields["name"] = fields["name"].strip(" (Fragment)")
+    else:
+        header_fields["fragment"] = False
+
+    # Convert reviewed to boolean
+    header_fields["reviewed"] = True if fields["reviewed"] == "sp" else False
+
+    # Convert evidence and version to int
+    header_fields["version"] = int(fields["version"])
+    header_fields["evidence"] = int(fields["evidence"])
+
+    return header_fields

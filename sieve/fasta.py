@@ -27,7 +27,6 @@ class Fasta:
         self.fragment = fragment
         self.sequence_lines = sequence_lines
 
-    # TODO: allow different sequence formats e.g. set line length
     @property
     def sequence(self):
         """Returns sequence as a single string with no spaces or line breaks."""
