@@ -1,16 +1,16 @@
 from sieve import Fasta
 
 
-def text_parser(filehandle):
+def parse_text(filehandle):
     """Generator function which accepts a filehandle as input. The filehandle
     should point to a file in UniProt text format.
 
     Yields Fasta objects."""
 
+    fasta = Fasta()
     for line in filehandle:
-        key = line[:2]
+        key = line[:2]  # This is more efficient that using line.startswith
         if key == "ID":
-            fasta = Fasta(sequence_lines=[])  # reset sequence lines!
             tokens = line.split()
             fasta.entry_name = tokens[1]
             fasta.reviewed = True if tokens[2] == "Reviewed;" else False
@@ -54,6 +54,7 @@ def text_parser(filehandle):
             fasta.sequence_lines.append(sequence_line)
         elif key == "//":
             yield fasta
+            fasta = Fasta(sequence_lines=[])  # reset sequence lines!
 
 
 def _extract_name(line):
