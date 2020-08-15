@@ -103,14 +103,13 @@ def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evid
     # Convert evidence list to int, since click only allows string types for click.Choice type
     evidence = tuple(int(x) for x in evidence)
 
-    # Check whether the file is valid fasta or text format
-    filetype = check_format(infile)
-
-    # Generate, filter, and output the fasta list
-    if filetype == "fasta":
-        fasta_list = FastaParser(infile)
-    elif filetype == "text":
-        fasta_list = text_parser(infile)
+    try:
+        # Check whether the file is valid fasta or text format
+        filetype = check_format(infile)
+        # Generate, filter, and output the fasta list
+        fasta_list = FastaParser(infile) if filetype == "fasta" else text_parser(infile)
+    except ValueError as err:
+        raise click.UsageError(str(err))
 
     filtered_fasta = filter_all(
         fasta_list, reviewed, accession, minlen, maxlen, taxid, gene, evidence
