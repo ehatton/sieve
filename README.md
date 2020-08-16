@@ -66,13 +66,13 @@ Get help:
 sieve --help
 ```
 
-The FastaParser class (for UniProt FASTA files) or text_parser function (for UniProt text files) can also be used in your own python scripts:
+The parse_fasta (for UniProt FASTA files) or parse_text functions (for UniProt text files) can also be used in your own python scripts:
 
 ```python
 from sieve import FastaParser
 
 with open("my_proteins.fasta", "r") as infile:
-    for protein in FastaParser(infile):
+    for protein in parse_fasta(infile):
         print(protein) # or do your custom filtering here
 ```
 
