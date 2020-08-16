@@ -1,3 +1,5 @@
+from sieve.text_parser import TextParserError
+from sieve.fasta_parser import FastaParserError
 import click
 from sieve import parse_fasta, parse_text
 
@@ -14,32 +16,6 @@ GENE_HELP = 'Filter by gene name. Names are case sensitive. You can have multipl
  "-g Shld1 -g SHLD1".'
 EVIDENCE_HELP = 'Filter by protein evidence level. You can have multiple evidence levels e.g. \
 "-e 1 -e 2 -e 3" to select evidence levels 1-3.'
-
-
-def check_format(infile):
-    """Accepts a filehandle as input. 
-    
-    Reads the first line of the file and checks to see if it looks like a
-    UniProt fasta file or a UniProt text file.
-
-    Returns the string 'fasta' or 'text' depending of the file format detected.
-
-    Raises ValueError if no valid file format is detected."""
-
-    filetype = None
-    # Check the first line of the file
-    line = infile.readline()
-    if line.startswith((">sp", ">tr")):
-        filetype = "fasta"
-    elif line.startswith("ID   "):
-        filetype = "text"
-    else:
-        raise ValueError(
-            "sieve requires either a UniProt fasta file or UniProt text file as input."
-        )
-    # Return file pointer to start of file
-    infile.seek(0)
-    return filetype
 
 
 def filter_all(
@@ -103,13 +79,16 @@ def main(infile, outfile, reviewed, accession, minlen, maxlen, taxid, gene, evid
     # Convert evidence list to int, since click only allows string types for click.Choice type
     evidence = tuple(int(x) for x in evidence)
 
+    # Generate, filter, and output the fasta list
     try:
-        # Check whether the file is valid fasta or text format
-        filetype = check_format(infile)
-        # Generate, filter, and output the fasta list
-        fasta_list = parse_fasta(infile) if filetype == "fasta" else parse_text(infile)
-    except ValueError as err:
-        raise click.UsageError(str(err))
+        fasta_list = parse_fasta(infile)
+    except FastaParserError:
+        try:
+            fasta_list = parse_text(infile)
+        except TextParserError:
+            raise click.UsageError(
+                "Invalid file format. File must be either FASTA or UniProt text format."
+            )
 
     filtered_fasta = filter_all(
         fasta_list, reviewed, accession, minlen, maxlen, taxid, gene, evidence

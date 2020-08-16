@@ -1,11 +1,26 @@
+from typing import Iterator, TextIO
+
 from sieve import Fasta
 
 
-def parse_text(filehandle):
+class TextParserError(Exception):
+    pass
+
+
+def parse_text(filehandle: TextIO) -> Iterator[Fasta]:
     """Generator function which accepts a filehandle as input. The filehandle
     should point to a file in UniProt text format.
 
-    Yields Fasta objects."""
+    Yields: Fasta objects.
+    """
+
+    # Check that the file looks like UniProt text format
+    first_line = next(filehandle)
+    if not first_line.startswith("ID"):
+        raise TextParserError(
+            "Unexpected file format: first line of UniProt text file should start with 'ID'"
+        )
+    filehandle.seek(0)
 
     fasta = Fasta(sequence="")
     for line in filehandle:
@@ -54,12 +69,13 @@ def parse_text(filehandle):
             fasta.sequence += sequence_line
         elif key == "//":
             yield fasta
-            fasta = Fasta(sequence="")  # reset sequence lines!
+            fasta = Fasta(sequence="")
 
 
-def _extract_name(line):
+def _extract_name(line: str) -> str:
     """Accepts a UniProt DE line (string) as input. Returns the name with
-    evidence tags removed."""
+    evidence tags removed.
+    """
     tokens = line[19:-2].split(" {")
     name = tokens[0]
     return name

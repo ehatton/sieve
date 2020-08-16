@@ -1,6 +1,12 @@
 import re
 from typing import Iterator, TextIO
+
+from click.decorators import password_option
 from sieve import Fasta
+
+
+class FastaParserError(Exception):
+    pass
 
 
 def parse_fasta(filehandle: TextIO) -> Iterator[Fasta]:
@@ -15,8 +21,8 @@ def parse_fasta(filehandle: TextIO) -> Iterator[Fasta]:
 
     header = next(filehandle)
     if not header.startswith(">"):
-        raise ValueError(
-            "Unexpected file format. First line of FASTA should start with '>'."
+        raise FastaParserError(
+            "Unexpected file format: first line of FASTA file should start with '>'."
         )
     sequence = ""
     for line in filehandle:
