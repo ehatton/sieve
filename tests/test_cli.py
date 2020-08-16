@@ -2,7 +2,7 @@ import unittest
 import sieve.cli as cli
 from click.testing import CliRunner
 from collections import namedtuple
-from sieve import FastaParser
+from sieve import parse_fasta
 
 
 # Defining some constants for expected fasta outputs
@@ -30,8 +30,8 @@ DDEEPTPGLSREVIRFLLEQTVMKDS
 
 class TestCliCheckFormat(unittest.TestCase):
     def setUp(self):
-        self.text_handle = open("tests/samples/pias4.txt", "r")
-        self.fasta_handle = open("tests/samples/SHLD1.fasta", "r")
+        self.text_handle = open("tests/fixtures/pias4.txt", "r")
+        self.fasta_handle = open("tests/fixtures/SHLD1.fasta", "r")
 
     def tearDown(self):
         self.text_handle.close()
@@ -55,8 +55,8 @@ class TestCliFilter(unittest.TestCase):
     """Tests for the command-line interface module."""
 
     def setUp(self):
-        with open("tests/samples/SHLD1.fasta", "r") as infile:
-            fasta_list = list(FastaParser(infile))
+        with open("tests/fixtures/SHLD1.fasta", "r") as infile:
+            fasta_list = list(parse_fasta(infile))
         self.fasta_list = fasta_list
 
     def test_filter_reviewed_yes(self):
@@ -124,56 +124,57 @@ class TestCliMain(unittest.TestCase):
 
     def test_reviewed_yes(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-r", "yes"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-r", "yes"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, BOVIN + HUMAN + MOUSE)
 
     def test_reviewed_no(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-r", "no"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-r", "no"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, "")
 
     def test_accession(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-a", "Q8IYI0", "-a", "Q9D112"]
+            cli.main,
+            ["tests/fixtures/SHLD1.fasta", "-", "-a", "Q8IYI0", "-a", "Q9D112"],
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, HUMAN + MOUSE)
 
     def test_min(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-min", "206"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-min", "206"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, BOVIN + MOUSE)
 
     def test_max(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-max", "205"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-max", "205"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, HUMAN)
 
     def test_taxid(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-t", "10090"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-t", "10090"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, MOUSE)
 
     def test_gene(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-g", "SHLD1"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-g", "SHLD1"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, BOVIN + HUMAN)
 
     def test_evidence(self):
         result = self.runner.invoke(
-            cli.main, ["tests/samples/SHLD1.fasta", "-", "-e", "2"]
+            cli.main, ["tests/fixtures/SHLD1.fasta", "-", "-e", "2"]
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, BOVIN + MOUSE)

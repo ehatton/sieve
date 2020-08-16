@@ -1,20 +1,22 @@
 import unittest
-from sieve import Fasta, FastaParser
+from sieve import Fasta, parse_fasta
+from sieve.fasta_parser import _parse_header
 from io import StringIO
 
 
 class TestFasta(unittest.TestCase):
     """Tests for the sieve Fasta class."""
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         header = ">sp|P60761|NEUG_MOUSE Neurogranin OS=Mus musculus OX=10090 GN=Nrgn PE=1 SV=1"
         seq = [
             "MDCCTESACSKPDDDILDIPLDDPGANAAAAKIQASFRGHMARKKIKSGECGRKGPGPGG\n",
             "PGGAGGARGGAGGGPSGD\n",
         ]
-        fields = FastaParser._parse_header(header)
-        self.header = header
-        self.Fasta = Fasta(*fields, seq)
+        fields = _parse_header(header)
+        cls.header = header
+        cls.Fasta = Fasta(sequence_lines=seq, **fields)
 
     def test_repr(self):
         self.assertEqual(self.Fasta.__repr__(), "Fasta(P60761, NEUG_MOUSE, 78)")
@@ -36,20 +38,3 @@ class TestFasta(unittest.TestCase):
 MDCCTESACSKPDDDILDIPLDDPGANAAAAKIQASFRGHMARKKIKSGECGRKGPGPGG
 PGGAGGARGGAGGGPSGD\n"""
         self.assertEqual(self.Fasta.format(), formatted)
-
-
-class TestFastaFragment(unittest.TestCase):
-    """Additional tests for the sieve Fasta class, to check that it works with sequences annotated as fragment."""
-
-    def setUp(self):
-        header = ">tr|E9PW65|E9PW65_MOUSE Bone morphogenetic protein receptor type-1A (Fragment) OS=Mus musculus OX=10090 GN=Bmpr1a PE=4 SV=2"
-        seq = [
-            "MTQLYTYIRLLGACLFIISHVQGQNLDSMLHGTGMKSDLDQKKPENGVTLAPEDTLPFLK",
-            "CYCSGHCPDDAINNTCITNGHCFAIIEEDDQGETTLTSGCMKYEGSDF",
-        ]
-        fields = FastaParser._parse_header(header)
-        self.header = header
-        self.Fasta = Fasta(*fields, seq)
-
-    def test_header(self):
-        self.assertEqual(self.Fasta.header(), self.header)

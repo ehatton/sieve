@@ -1,12 +1,12 @@
 from unittest import TestCase
-from sieve import text_parser
+from sieve import parse_text
 
 
 class TestTextParser(TestCase):
-    def setUp(self):
-        with open("tests/samples/pias4.txt", "r") as filehandle:
-            fastalist = list(text_parser(filehandle))
-        self.fastalist = fastalist
+    @classmethod
+    def setUpClass(cls):
+        with open("tests/fixtures/pias4.txt", "r") as filehandle:
+            cls.fastalist = list(parse_text(filehandle))
 
     def test_id(self):
         self.assertEqual(self.fastalist[0].entry_name, "PIAS4_HUMAN")
@@ -35,14 +35,17 @@ class TestTextParser(TestCase):
 
     def test_length(self):
         self.assertEqual(len(self.fastalist[0]), 510)
+
+    def test_length_of_second_entry(self):
         # Check that sequence lines are not accumulated in subsequent entries
         self.assertEqual(len(self.fastalist[1]), 507)
 
 
 class TestTextParserTrEMBL(TestCase):
-    def setUp(self):
-        with open("tests/samples/A0A0S2Z4N5.txt", "r") as infile:
-            self.fastalist = list(text_parser(infile))
+    @classmethod
+    def setUpClass(cls):
+        with open("tests/fixtures/A0A0S2Z4N5.txt", "r") as infile:
+            cls.fastalist = list(parse_text(infile))
 
     def test_name(self):
         # Check that an entry with multiple SubNames returns only the first one

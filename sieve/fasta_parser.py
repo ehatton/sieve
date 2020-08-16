@@ -1,5 +1,5 @@
 import re
-from typing import Dict, Iterator, TextIO
+from typing import Iterator, TextIO
 from sieve import Fasta
 
 
@@ -14,18 +14,26 @@ def parse_fasta(filehandle: TextIO) -> Iterator[Fasta]:
     """
 
     header = next(filehandle)
+    if not header.startswith(">"):
+        raise ValueError(
+            "Unexpected file format. First line of FASTA should start with '>'."
+        )
     sequence_lines = []
     for line in filehandle:
         if line.startswith(">"):
             header_fields = _parse_header(header)
             yield Fasta(**header_fields, sequence_lines=sequence_lines)
+            # Reset variables
             header = line
             sequence_lines = []
         else:
             sequence_lines.append(line)
+    # Get the last entry
+    header_fields = _parse_header(header)
+    yield Fasta(**header_fields, sequence_lines=sequence_lines)
 
 
-def _parse_header(header: str) -> Dict:
+def _parse_header(header: str) -> dict:
     """Reads a UniProt format fasta header line and parses out all the different fields.
 
     Args:
@@ -44,7 +52,7 @@ def _parse_header(header: str) -> Dict:
     return header_fields
 
 
-def _convert_fields(fields: Dict[str]) -> Dict:
+def _convert_fields(fields: dict) -> dict:
     """Helper function which converts a dictionary of header fields (as strings)
      into a version which can be used by the Fasta object init function.
 
