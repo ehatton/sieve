@@ -1,5 +1,5 @@
 import unittest
-from sieve.fasta_parser import Fasta, parse_fasta, _parse_header
+from sieve.fasta_parser import Fasta, parse_fasta, _parse_header, FastaParserError
 from io import StringIO
 
 
@@ -81,7 +81,7 @@ class TestFastaParser(unittest.TestCase):
 
     def test_file_format_check(self):
         invalid_fasta = StringIO("ID   BRCA1_MOUSE\nAC   P12345\n")
-        with self.assertRaises(ValueError):
+        with self.assertRaises(FastaParserError):
             list(parse_fasta(invalid_fasta))
 
     def test_file_format_check_sp(self):
