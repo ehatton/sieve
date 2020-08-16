@@ -28,29 +28,6 @@ DDEEPTPGLSREVIRFLLEQTVMKDS
 """
 
 
-class TestCliCheckFormat(unittest.TestCase):
-    def setUp(self):
-        self.text_handle = open("tests/fixtures/pias4.txt", "r")
-        self.fasta_handle = open("tests/fixtures/SHLD1.fasta", "r")
-
-    def tearDown(self):
-        self.text_handle.close()
-        self.fasta_handle.close()
-
-    def test_check_fasta_filetype(self):
-        fasta_filetype = cli.check_format(self.fasta_handle)
-        self.assertEqual(fasta_filetype, "fasta")
-
-    def test_check_text_filetype(self):
-        text_filetype = cli.check_format(self.text_handle)
-        self.assertEqual(text_filetype, "text")
-
-    def test_check_file_pointer(self):
-        # Check that the file pointer has returned to the start
-        file_pointer = self.text_handle.tell()
-        self.assertEqual(file_pointer, 0)
-
-
 class TestCliFilter(unittest.TestCase):
     """Tests for the command-line interface module."""
 
@@ -60,61 +37,71 @@ class TestCliFilter(unittest.TestCase):
         self.fasta_list = fasta_list
 
     def test_filter_reviewed_yes(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, reviewed="yes"))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, reviewed="yes"))
         self.assertEqual(len(filtered_fasta), 3)
 
     def test_filter_reviewed_no(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, reviewed="no"))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, reviewed="no"))
         self.assertEqual(len(filtered_fasta), 0)
 
     def test_filter_accession(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, accession="Q2KIJ1"))
+        filtered_fasta = list(
+            cli._filter_by_parameter(self.fasta_list, accession=("Q2KIJ1",))
+        )
         self.assertEqual(len(filtered_fasta), 1)
         self.assertEqual(filtered_fasta[0].entry_name, "SHLD1_BOVIN")
 
     def test_filter_minlen_200(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, minlen=200))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, minlen=200))
         self.assertEqual(len(filtered_fasta), 3)
 
     def test_filter_minlen_300(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, minlen=300))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, minlen=300))
         self.assertEqual(len(filtered_fasta), 0)
 
     def test_filter_maxlen_200(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, maxlen=200))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, maxlen=200))
         self.assertEqual(len(filtered_fasta), 0)
 
     def test_filter_maxlen_300(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, maxlen=300))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, maxlen=300))
         self.assertEqual(len(filtered_fasta), 3)
 
     def test_filter_maxlen_minlen(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, minlen=205, maxlen=205))
+        filtered_fasta = list(
+            cli._filter_by_parameter(self.fasta_list, minlen=205, maxlen=205)
+        )
         self.assertEqual(len(filtered_fasta), 1)
         self.assertEqual(filtered_fasta[0].accession, "Q8IYI0")
 
     def test_filter_taxid(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, taxid=["10090"]))
+        filtered_fasta = list(
+            cli._filter_by_parameter(self.fasta_list, taxid=("10090",))
+        )
         self.assertEqual(len(filtered_fasta), 1)
         self.assertEqual(filtered_fasta[0].accession, "Q9D112")
 
     def test_filter_taxid_multiple(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, taxid=["9606", "10090"]))
+        filtered_fasta = list(
+            cli._filter_by_parameter(self.fasta_list, taxid=("9606", "10090"))
+        )
         self.assertEqual(len(filtered_fasta), 2)
 
     def test_filter_maxlen_taxid(self):
         filtered_fasta = list(
-            cli.filter_all(self.fasta_list, maxlen=205, taxid=["10090"])
+            cli._filter_by_parameter(self.fasta_list, maxlen=205, taxid=("10090",))
         )
         self.assertEqual(len(filtered_fasta), 0)
 
     def test_filter_gene(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, gene=("Shld1",)))
+        filtered_fasta = list(
+            cli._filter_by_parameter(self.fasta_list, gene=("Shld1",))
+        )
         self.assertEqual(len(filtered_fasta), 1)
         self.assertEqual(filtered_fasta[0].taxid, "10090")
 
     def test_filter_evidence(self):
-        filtered_fasta = list(cli.filter_all(self.fasta_list, evidence=(1,)))
+        filtered_fasta = list(cli._filter_by_parameter(self.fasta_list, evidence=(1,)))
         self.assertEqual(len(filtered_fasta), 1)
 
 
@@ -178,3 +165,16 @@ class TestCliMain(unittest.TestCase):
         )
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.stdout, BOVIN + MOUSE)
+
+
+class TestCliMainErrors(unittest.TestCase):
+    "Test that invalid file formats throw an error."
+
+    @classmethod
+    def setUpClass(cls):
+        cls.runner = CliRunner()
+
+    def test_invalid_format(self):
+        result = self.runner.invoke(cli.main, ["tests/fixtures/invalid.format", "-"])
+        error_message = "Error: Invalid file format. File must be either FASTA or UniProt text format.\n"
+        self.assertEqual(result.stdout, error_message)
