@@ -7,7 +7,7 @@ def parse_text(filehandle):
 
     Yields Fasta objects."""
 
-    fasta = Fasta()
+    fasta = Fasta(sequence="")
     for line in filehandle:
         key = line[:2]  # This is more efficient that using line.startswith
         if key == "ID":
@@ -51,10 +51,10 @@ def parse_text(filehandle):
             fasta.evidence = int(line[5])
         elif key == "  ":
             sequence_line = line.strip().replace(" ", "")
-            fasta.sequence_lines.append(sequence_line)
+            fasta.sequence += sequence_line
         elif key == "//":
             yield fasta
-            fasta = Fasta(sequence_lines=[])  # reset sequence lines!
+            fasta = Fasta(sequence="")  # reset sequence lines!
 
 
 def _extract_name(line):

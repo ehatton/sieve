@@ -10,13 +10,10 @@ class TestFasta(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         header = ">sp|P60761|NEUG_MOUSE Neurogranin OS=Mus musculus OX=10090 GN=Nrgn PE=1 SV=1"
-        seq = [
-            "MDCCTESACSKPDDDILDIPLDDPGANAAAAKIQASFRGHMARKKIKSGECGRKGPGPGG\n",
-            "PGGAGGARGGAGGGPSGD\n",
-        ]
+        seq = "MDCCTESACSKPDDDILDIPLDDPGANAAAAKIQASFRGHMARKKIKSGECGRKGPGPGGPGGAGGARGGAGGGPSGD"
         fields = _parse_header(header)
         cls.header = header
-        cls.Fasta = Fasta(sequence_lines=seq, **fields)
+        cls.Fasta = Fasta(sequence=seq, **fields)
 
     def test_repr(self):
         self.assertEqual(self.Fasta.__repr__(), "Fasta(P60761, NEUG_MOUSE, 78)")
