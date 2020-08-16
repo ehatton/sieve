@@ -18,19 +18,19 @@ def parse_fasta(filehandle: TextIO) -> Iterator[Fasta]:
         raise ValueError(
             "Unexpected file format. First line of FASTA should start with '>'."
         )
-    sequence_lines = []
+    sequence = ""
     for line in filehandle:
         if line.startswith(">"):
             header_fields = _parse_header(header)
-            yield Fasta(**header_fields, sequence_lines=sequence_lines)
+            yield Fasta(**header_fields, sequence=sequence)
             # Reset variables
             header = line
-            sequence_lines = []
+            sequence = ""
         else:
-            sequence_lines.append(line)
+            sequence += line.replace(" ", "").strip()
     # Get the last entry
     header_fields = _parse_header(header)
-    yield Fasta(**header_fields, sequence_lines=sequence_lines)
+    yield Fasta(**header_fields, sequence=sequence)
 
 
 def _parse_header(header: str) -> dict:
