@@ -1,7 +1,6 @@
 import re
 from typing import Iterator, TextIO
 
-from click.decorators import password_option
 from sieve import Fasta
 
 
