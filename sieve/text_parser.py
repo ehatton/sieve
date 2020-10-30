@@ -24,7 +24,7 @@ def parse_text(filehandle: TextIO) -> Iterator[Fasta]:
 
     fasta = Fasta(sequence="")
     for line in filehandle:
-        key = line[:2]  # This is more efficient that using line.startswith
+        key = line[:2]  # This is more efficient than using line.startswith
         if key == "ID":
             tokens = line.split()
             fasta.entry_name = tokens[1]
